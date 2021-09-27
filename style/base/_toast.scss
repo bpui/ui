@@ -1,0 +1,122 @@
+@keyframes uiToastMainDown1 {
+  0% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.ui-toast-row {
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  width: 320px;
+  // max-width: 90vw;
+  min-height: 50px;
+  overflow: hidden;
+  align-items: center;
+  font-size: 14px;
+  color: #000;
+  background: #fff;
+  margin-left: -184px;
+  box-shadow: 0px 2px 40px 0px rgba(16, 27, 79, 0.2);
+  border-radius: 4px;
+  transition: top 0.3s linear;
+  animation: uiToastMainDown1 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  position: relative;
+
+  .ui-toast-icon {
+    // display: inline-block;
+    margin-right: 10px;
+  }
+  .ui-toast-content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 10px 10px 10px 0px;
+  }
+  .ui-toast-close {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-weight: 500;
+    align-self: start;
+    font-size: 16px;
+    color: #000;
+    float: right;
+    cursor: pointer;
+  }
+  &[date-type="info"] {
+    .ui-toast-icon {
+      color: #0c66ff;
+    }
+    &:before {
+      content: "";
+      width: 3px;
+      height: 100%;
+      position: absolute;
+      background-color: #0c66ff;
+      left: 0;
+      top: 0;
+    }
+  }
+  &[date-type="error"] {
+    .ui-toast-icon {
+      color: #f03d3d;
+    }
+    &:before {
+      content: "";
+      width: 3px;
+      height: 100%;
+      position: absolute;
+      background-color: #f03d3d;
+      left: 0;
+      top: 0;
+    }
+  }
+  &[date-type="success"] {
+    .ui-toast-icon {
+      color: #0bb07b;
+    }
+    &:before {
+      content: "";
+      width: 3px;
+      height: 100%;
+      position: absolute;
+      background-color: #0bb07b;
+      left: 0;
+      top: 0;
+    }
+  }
+  &[date-type="alert"] {
+    .ui-toast-icon {
+      color: #ffad0d;
+    }
+    &:before {
+      content: "";
+      width: 3px;
+      height: 100%;
+      position: absolute;
+      background-color: #ffad0d;
+      left: 0;
+      top: 0;
+    }
+  }
+  &[date-type="notification"] {
+    .ui-toast-icon {
+      color: #ffad0d;
+    }
+    &:before {
+      content: "";
+      width: 3px;
+      height: 100%;
+      position: absolute;
+      background-color: #ffad0d;
+      left: 0;
+      top: 0;
+    }
+  }
+}

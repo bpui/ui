@@ -1,0 +1,69 @@
+
+/**
+ * @desc: 单行缩略.
+ */
+@mixin ui-ellipsis() {
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+/**
+ * @desc: 多行缩略.
+ * @param lines: 指定最多的行数.
+ */
+@mixin ui-ellipsisMultiline($lines) {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: normal;
+  word-break: break-all;
+  /*! autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}
+
+/**
+ * @desc: 平滑字体.
+ */
+@mixin ui-smoothing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+
+.ui-ellipsis {
+  @include ui-ellipsis();
+}
+.ui-ellipsisMultiline1 {
+  @extend .ui-ellipsis;
+}
+.ui-ellipsisMultiline2 {
+  @include ui-ellipsisMultiline(2);
+}
+.ui-ellipsisMultiline3 {
+  @include ui-ellipsisMultiline(3);
+}
+.ui-ellipsisMultiline4 {
+  @include ui-ellipsisMultiline(4);
+}
+.ui-ellipsisMultiline5 {
+  @include ui-ellipsisMultiline(5);
+}
+.ui-ellipsisMultiline6 {
+  @include ui-ellipsisMultiline(6);
+}
+.ui-ellipsisMultiline7 {
+  @include ui-ellipsisMultiline(7);
+}
+.ui-ellipsisMultiline8 {
+  @include ui-ellipsisMultiline(8);
+}
+
+.ui-smoothing {
+  @include ui-smoothing();
+}
+

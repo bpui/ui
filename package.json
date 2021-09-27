@@ -1,0 +1,80 @@
+{
+  "description": "bpui ui",
+  "dependencies": {
+    "bpui.js": "^1.1.23",
+    "bpui.js.bundle": "^1.1.23",
+    "js-cookie": "^3.0.1",
+    "keymaster": "^1.6.2",
+    "store2": "^2.12.0",
+    "vue-styled-components": "^1.6.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.15.6",
+    "@bpui/build-cli": "0.0.9",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@rollup/plugin-typescript": "^3.0.0",
+    "@types/js-cookie": "^2.2.7",
+    "@types/keymaster": "^1.6.30",
+    "@types/styled-components": "^5.1.14",
+    "@vue/babel-plugin-transform-vue-jsx": "^1.2.1",
+    "@vue/babel-preset-jsx": "^1.2.4",
+    "@vue/cli-plugin-babel": "^4.5.13",
+    "@vue/cli-plugin-typescript": "^4.5.13",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-component": "^1.1.1",
+    "core-js": "^3.18.1",
+    "esbuild": "^0.13.2",
+    "febs": "^1.2.10",
+    "rollup": "^1.31.1",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-babel-minify": "^9.1.1",
+    "rollup-plugin-bundle-scss": "^0.1.0",
+    "rollup-plugin-esbuild": "^4.5.0",
+    "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-typescript2": "^0.26.0",
+    "rollup-plugin-vue": "^5.1.6",
+    "rollup-plugin-vue-jsx-compat": "0.0.6",
+    "ts-loader": "^6.2.2",
+    "typescript": "^4.4.3",
+    "vue": "^2.6.14",
+    "vue-property-decorator": "^9.1.2",
+    "webpack-bundle-analyzer": "^3.9.0"
+  },
+  "peerDependencies": {
+    "vue": ">=2.6.11"
+  },
+  "directories": {},
+  "engines": {
+    "node": ">=10"
+  },
+  "homepage": "https://github.com/bpui/ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bpui/ui.git"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "files": [
+    "style",
+    "dist",
+    "types",
+    "icons"
+  ],
+  "main": "dist/index.min.js",
+  "module": "dist/index.esm.min.js",
+  "types": "types/index.d.ts",
+  "maintainers": [
+    {
+      "name": "brainpoint",
+      "email": "bpoint.lee@gmail.com"
+    }
+  ],
+  "scripts": {
+    "prepublishOnly": "node ./scripts/bundle.js"
+  },
+  "name": "@bpui/ui",
+  "version": "0.0.2"
+}
