@@ -1,4 +1,7 @@
 /// <reference types="@bpui/libs" />
+/// <reference path="./storage.d.ts" />
+/// <reference path="./network.d.ts" />
+/// <reference path="./keyboard.d.ts" />
 
 import 'vue'
 import bpDialog from '@bpui/dialog';

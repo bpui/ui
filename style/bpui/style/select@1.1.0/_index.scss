@@ -1,8 +1,8 @@
-@import "~@bpui/libs/style/variable";
-@import "~@bpui/libs/style/device";
-@import "~@bpui/libs/style/class";
-@import "~@bpui/input/style/variable";
-@import "~@bpui/popover/style/variable";
+@import "../libs@1.1.7/variable";
+@import "../libs@1.1.7/device";
+@import "../libs@1.1.7/class";
+@import "../input@1.1.14/variable";
+@import "../popover@1.1.15/variable";
 @import "./variable";
 @import "./select";
 @import "./scrollbar";

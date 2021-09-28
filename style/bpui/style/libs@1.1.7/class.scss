@@ -1,7 +1,7 @@
 
 @import "./variable";
 @import './text';
-@import "../icons";
+@import "~@bpui/libs/icons";
 
 html {
   @include bp-smoothing();
