@@ -10,11 +10,7 @@
 import { injectGlobal }  from 'vue-styled-components'
 import * as febs from 'febs-browser'
 import { UIPicker, UIPickerDateDatasource } from './picker'
-
-function i18n(key, defaultWord) {
-  let r = window['$UILangI18n'];
-  return r ? r[key] : defaultWord;
-}
+import { i18n } from '../_utils/i18n';
 
 const _UIDatePicker = {
   name: 'ui-date-picker',

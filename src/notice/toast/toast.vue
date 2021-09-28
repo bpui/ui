@@ -28,15 +28,15 @@
         v-else-if="type == 'alert' || type == 'notification'"
         width="20px"
         class="ui-toast-icon"
-        name="alert"
+        name="ui-alert"
       ></bp-icon>
       <bp-icon
         v-else
         width="20px"
         class="ui-toast-icon"
-        name="warning"
+        name="ui-warning"
       ></bp-icon>
-      <span class="ui-toast-content">{{ content || "" }}</span>
+      <span class="ui-toast-content">{{ realContent }}</span>
       <span style="flex: 1"></span>
       <!-- <a  class="ui-toast-close">x</a> -->
       <bp-icon
@@ -53,16 +53,18 @@
 
 import * as febs from 'febs-browser';
 
+import { i18n } from '../../_utils/i18n';
+
 export default {
   props: {
-    content: { type: [String, Number], required: true },
+    content: { type: [String, Number] },
     type: { type: String, default: "info" }
   },
   data() {
     return {
       visible: false,
       offsetHeight: 0,
-      autoClose: 3000,
+      duration: 3000,
       timer: null,
       height: 0,
     };
@@ -91,6 +93,27 @@ export default {
           "z-index": "100099",
         };
       }
+    },
+    realContent() {
+      if (this.content) {
+        return this.content;
+      }
+
+      if (this.type == 'alert') {
+        return i18n('common.警告', '警告');
+      }
+      else if (this.type == 'success') {
+        return i18n('common.成功', '成功');
+      }
+      else if (this.type == 'info') {
+        return i18n('common.提示', '提示');
+      }
+      else if (this.type == 'error') {
+        return i18n('common.错误', '错误');
+      }
+      else if (this.type == 'notification') {
+        return i18n('common.通知', '通知');
+      }
     }
   },
   mounted() {
@@ -103,7 +126,7 @@ export default {
     createTimer() {
       this.timer = setTimeout(() => {
         this.visible = false;
-      }, this.autoClose);
+      }, this.duration);
     },
     clearTimer() {
       if (this.timer) {
@@ -113,11 +136,10 @@ export default {
     },
     handleClose(e) {
       e.preventDefault();
-      // this.visible = false;
+      this.clearTimer();
+      this.visible = false;
       this.$emit("close");
     },
-    clearTimer() {},
-    createTimer() {},
     afterLeave() {
       this.$emit("closed");
     },

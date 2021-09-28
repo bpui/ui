@@ -1,7 +1,6 @@
 
 import * as febs from 'febs-browser';
 import libs from '@bpui/libs';
-import dialog from '@bpui/dialog';
 import { storage } from './storage';
 import { keyboard } from './keyboard';
 import { network } from './network';
@@ -9,11 +8,18 @@ import { network } from './network';
 export * from './forbidDebugger';
 export { setNetworkHandler } from './network';
 
+function i18n(k: string) {
+  return k;
+}
+i18n.__de = true;
+
 function setup() {
   if ((setup as any).installed) {
     return;
   }
   (setup as any).installed = true;
+
+  window['$i18n'] = i18n;
 
   window['$UIKeyboard'] = keyboard;
   window['$UIStorage'] = storage;
@@ -33,10 +39,10 @@ function setup() {
   });
   Object.defineProperty(libs, 'langI18n', {
     get: function () {
-      return window['$UILangI18n'];
+      return window['$i18n'];
     },
     set: function (s) {
-      window['$UILangI18n'] = s;
+      window['$i18n'] = s;
     }
   });
 

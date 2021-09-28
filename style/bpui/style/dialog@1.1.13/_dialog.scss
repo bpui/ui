@@ -46,6 +46,7 @@
     border-radius: $bpDialogRadius;
     background-color: $bpDialogBgColor;
     color: $bpDialogTextColor;
+    border-radius: 0;
   }
 
   .bp-dialog__title {
@@ -53,9 +54,11 @@
     font-size: $bpDialogTitleFontSize;
     font-weight: $bpDialogTitleFontWeight;
     padding: 15px 35px 0px 20px;
-    margin-bottom: -6px;
+    margin-bottom: 10px;
     text-align: left;
     color: $bpDialogTitleColor;
+    position: relative;
+    min-height: 26px;
   }
 
   .bp-dialog__main {
@@ -132,7 +135,7 @@
         display: flex;
         flex-direction: row;
       }
-
+      
       & > div {
         display: flex;
         flex-direction: row;
@@ -149,7 +152,7 @@
   .bp-dialog__close {
     cursor: pointer;
     position: absolute;
-    top: 10px;
+    top: 14px;
     right: 10px;
     height: 18px;
     width: 18px;

@@ -13,8 +13,8 @@ function injectGlobal() {
   /**
    * 注册图标.
    */
-  bpLibs.icons.registerFontIcon('alert', 'ui-iconAlert', 'ui-icon');
-  bpLibs.icons.registerFontIcon('warning', 'ui-iconWarning', 'ui-icon');
+  bpLibs.icons.registerFontIcon('ui-alert', 'ui-iconAlert', 'ui-icon');
+  bpLibs.icons.registerFontIcon('ui-warning', 'ui-iconWarning', 'ui-icon');
 
   injectGlobal.installed = true;
 }

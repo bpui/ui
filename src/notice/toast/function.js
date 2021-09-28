@@ -7,7 +7,7 @@
  * use: this.$toast({
  *    content  !: string,
  *    type     ?: string ('success'||'error'||'info'||'alert'||'notification'   default = 'info')
- *    autoClose?: timer (default = 3000)
+ *    duration?: timer (default = 3000)
  * })
  */
 
@@ -44,13 +44,21 @@ export const toast = (options) => {
   if (typeof options === 'string') {
     options = { content: options };
   }
-  const { duration, ...rest } = options;
+  let { duration, ...rest } = options;
+  duration = Number(duration);
+  if (!duration) {
+    duration = 3000;
+  }
+  else {
+    duration = Math.ceil(duration);
+  }
+  
   const instance = new toastConstructor({
     propsData: {
       ...rest,
     },
     data: {
-      autoClose: duration === undefined ? 3000 : duration,
+      duration: duration,
     },
   });
 

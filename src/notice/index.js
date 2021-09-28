@@ -2,11 +2,7 @@
 
 import bpui from '@bpui/dialog';
 import { toast } from './toast';
-
-function i18n(key, defaultWord) {
-  let r = window['$UILangI18n'];
-  return r ? r[key] : defaultWord;
-}
+import { i18n } from '../_utils/i18n';
 
 //--------------------------------------------------------
 // confirm
