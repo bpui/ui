@@ -1,12 +1,11 @@
 
-declare namespace bp {
-
+declare namespace ui {
   namespace storage {
     interface IStorage {
       /**
       * @desc: 数据条数.
       */
-      get length(): number;
+      readonly length: number;
 
       /**
       * @desc: 所有的key.
@@ -76,19 +75,19 @@ declare namespace bp {
     }
 
     interface ICookies {
-      
-      get default(): ICookieAttributes;
+  
+      readonly default: ICookieAttributes;
 
       /**
        * @desc: 设置信息.
        */
-      set(key: string, data: string, options?: ICookieAttributes);
+      set(key: string, data: string, options?: ICookieAttributes): void;
 
       /**
        * @desc: 获取信息.
        * @param alt: 如果获取不到信息, 使用此数据返回.
        */
-      get(key: string, alt?: any);
+      get(key: string, alt?: any): string;
 
       /**
        * @desc: 移除信息.
@@ -96,7 +95,7 @@ declare namespace bp {
        * IMPORTANT! When deleting a cookie and you're not relying on the default attributes, 
        * you must pass the exact same path and domain attributes that were used to set the cookie.
        */
-      remove(key: any, options?: ICookieAttributes);
+      remove(key: any, options?: ICookieAttributes): void;
     }
 
     /**

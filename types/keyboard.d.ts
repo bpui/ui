@@ -1,9 +1,9 @@
 
-declare namespace bp {
+declare namespace ui {
   namespace keyboard {
     type KeyHandler = (keyboardEvent: KeyboardEvent) => boolean | void;
 
-    interface IKeyboard {
+    export interface IKeyboard {
       /**
        * @desc: 定义一个快捷键.
        *
@@ -25,7 +25,7 @@ declare namespace bp {
        * keyboard.on('ctrl+r', () => {});
        * keyboard.on('ctrl+r, ⌘+r', () => {});
        */
-      on(keyname: string, callback: bp.keyboard.KeyHandler): IKeyboard;
+      on(keyname: string, callback: KeyHandler): IKeyboard;
 
       /**
        * 解除按键handler.
@@ -48,33 +48,33 @@ declare namespace bp {
       /**
        * 检查shift键是否按下.
        */
-      get shift(): boolean;
-      get '⇧'(): boolean;
+      readonly shift: boolean;
+      readonly '⇧': boolean;
 
       /**
        * 检查alt键是否按下.
        */
-      get alt(): boolean;
-      get option(): boolean;
-      get '⌥'(): boolean;
+      readonly alt: boolean;
+      readonly option: boolean;
+      readonly '⌥': boolean;
 
       /**
        * 检查control键是否按下.
        */
-      get ctrl(): boolean;
-      get control(): boolean;
-      get '⌃'(): boolean;
+      readonly ctrl: boolean;
+      readonly control: boolean;
+      readonly '⌃': boolean;
 
       /**
        * 检查command键是否按下.
        */
-      get command(): boolean;
-      get '⌘'(): boolean;
+      readonly command: boolean;
+      readonly '⌘': boolean;
 
       /**
        * 获得按下按键的keyCode列表.
        */
-      get pressedKeyCodes(): number[];
+      readonly pressedKeyCodes: number[];
     }
   }
 }

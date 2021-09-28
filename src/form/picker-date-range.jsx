@@ -8,7 +8,7 @@
  */
 
 import * as febs from 'febs-browser'
-import styled, { injectGlobal }  from 'vue-styled-components'
+import { injectGlobal }  from 'vue-styled-components'
 import { UIPicker, UIPickerDateDatasource } from './picker'
 
 function i18n(key, defaultWord) {

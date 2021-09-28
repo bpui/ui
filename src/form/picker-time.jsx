@@ -7,7 +7,7 @@
  * Desc:
  */
 
-import styled, { injectGlobal }  from 'vue-styled-components'
+import { injectGlobal }  from 'vue-styled-components'
 import * as febs from 'febs-browser'
 import { UIPicker, UIPickerTimeDatasource } from './picker'
 

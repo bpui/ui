@@ -1,8 +1,8 @@
 
 /// <reference path="./vue.d.ts" />
-/// <reference path="./keyboard.d.ts" />
 /// <reference path="./storage.d.ts" />
 /// <reference path="./network.d.ts" />
+/// <reference path="./keyboard.d.ts" />
 
 import * as febs from 'febs-browser';
 import './notice.d';
@@ -15,15 +15,15 @@ declare global {
   /**
    * 全局按键操作对象
    */
-  const $UIKeyboard: bp.keyboard.IKeyboard;
+  const $UIKeyboard: ui.keyboard.IKeyboard;
   /**
    * @desc 网络工具.
    */
-  const $UINetwork: bp.network.INetwork;
+  const $UINetwork: ui.network.INetwork;
   /**
    * @desc 本地存储.
    */
-  const $UIStorage: typeof bp.storage;
+  const $UIStorage: typeof ui.storage;
   /**
    * @desc 基础库.
    */
@@ -51,4 +51,4 @@ export function forbidDebugger(): void;
 /**
  * 设置网络处理处理对象.
  */
-export function setNetworkHandler(handler: bp.network.INetworkHandler): void
+export function setNetworkHandler(handler: ui.network.INetworkHandler): void

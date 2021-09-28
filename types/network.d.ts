@@ -1,7 +1,6 @@
 
-declare namespace bp {
+declare namespace ui {
   namespace network {
-
     type FetchOptionBase = {
       /**
        * @desc timeout
@@ -23,7 +22,7 @@ declare namespace bp {
       /**
        * @desc 接收到服务器反馈消息后, 先进行一次原始数据的处理并将处理后的结果返回.
        */
-      rawHandle?: (serverData:any)=>any,
+      rawHandle?: (serverData: any) => any,
       /**
        * @desc 不触发遮罩层，默认有遮罩层.
        */
@@ -44,11 +43,11 @@ declare namespace bp {
        * 
        * 如果请求的url不是http/https开头, 将使用此站点地址作为前缀.
        */
-      get requestHost(): string;
+      readonly requestHost: string;
       /**
        * @desc 默认的请求选项.
        */
-      get defaultRequestOption(): FetchOptionBase;
+      readonly defaultRequestOption: FetchOptionBase;
       /**
        * @desc: 处理api错误.
        * @param data: 服务器返回的消息.
@@ -97,6 +96,5 @@ declare namespace bp {
        */
       delete(url: string, body: any, option?: FetchOption): Promise<any>;
     }
-    
   }
 }

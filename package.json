@@ -76,5 +76,5 @@
     "prepublishOnly": "node ./scripts/bundle.js"
   },
   "name": "@bpui/ui",
-  "version": "0.0.2"
+  "version": "0.0.3"
 }
