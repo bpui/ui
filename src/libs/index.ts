@@ -8,18 +8,11 @@ import { network } from './network';
 export * from './forbidDebugger';
 export { setNetworkHandler } from './network';
 
-function i18n(k: string) {
-  return k;
-}
-i18n.__de = true;
-
 function setup() {
   if ((setup as any).installed) {
     return;
   }
   (setup as any).installed = true;
-
-  window['$i18n'] = i18n;
 
   window['$UIKeyboard'] = keyboard;
   window['$UIStorage'] = storage;
@@ -35,26 +28,63 @@ function setup() {
     },
     set: function (s) {
       storage.namespace('$lang').set('lang', s);
+
+      // 设置语言.
+      let i18 = window['$__i18n'];
+      if (i18) {
+        let lan = (libs as any).lang;
+        if (febs.string.isEmpty(lan) || !i18.messages.hasOwnProperty(lan)) {
+          lan = i18.defaultLocale;
+        }
+        if (i18.messages.hasOwnProperty(lan)) {
+          window['$__i18nMsg'] = i18.messages[lan];
+        }
+      }
     }
   });
-  Object.defineProperty(libs, 'langI18n', {
+
+  Object.defineProperty(libs, 'setI18nMessage', {
     get: function () {
-      return window['$i18n'];
+      return (cfg: { defaultLocale?: string, messages: any }) => {
+        window['$__i18n'] = { defaultLocale:cfg.defaultLocale||'zh-cn', messages:cfg.messages };
+
+        // 设置语言.
+        let i18 = window['$__i18n'];
+        if (i18) {
+          let lan = (libs as any).lang;
+          if (febs.string.isEmpty(lan) || !i18.messages.hasOwnProperty(lan)) {
+            lan = i18.defaultLocale;
+          }
+          if (i18.messages.hasOwnProperty(lan)) {
+            window['$__i18nMsg'] = i18.messages[lan];
+          }
+        }
+      };
     },
-    set: function (s) {
-      window['$i18n'] = s;
-    }
   });
 
   window['$UILibs'] = libs;
   window['$UINetwork'] = network;
   window['$Febs'] = febs;
-  window['$lang'] = function (k: string) {
-    let r = window['$i18n'](k, (libs as any).lang);
-    if (Array.isArray(r)) {
-      return r[0];
-    } else {
-      return r;
+  window['$i18n'] = function (k: string, defaultK: string) {
+    let i18 = window['$__i18nMsg'];
+    if (!i18) {
+      return defaultK || k;
+    }
+    else {
+      let messages = i18;
+      let ks = k.split('.');
+      for (let i = 0; i < ks.length; i++) {
+        let nn = ks[i];
+        if (!messages.hasOwnProperty(nn)) {
+          return defaultK || k;
+        }
+        else {
+          messages = messages[nn];
+        }
+      }
+
+      return messages;
     }
   }
 }

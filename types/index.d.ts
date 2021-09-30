@@ -11,6 +11,9 @@ export * from './actionsheet.d';
 export * from './picker.d';
 export * from './picker-date.d';
 
+type LocaleMessage = string | LocaleMessageObject;
+interface LocaleMessageObject { [key: string]: LocaleMessage; }
+
 declare global {
   /**
    * 全局按键操作对象
@@ -33,14 +36,21 @@ declare global {
      */
     lang: string;
     /**
-     * @desc 设置或获取i18n对象.
+     * @desc 设置i18n信息.
      */
-    langI18n: any;
+    setI18nMessage: (cfg:{
+      // 默认的本地语言, 找不到对应语言词汇时使用此语言; 默认: zh-cn
+      defaultLocale?: string,
+      // 包含所有语言的词汇表.
+      messages: {
+        [locale: string]: LocaleMessageObject
+      },
+    }) => void;
   };
   /**
-   * @desc 获取本地语言.
+   * @desc 获取本地语言. 如果 `key` 不存在则返回 `defaultWord`
    */
-  const $lang: (key:string) => string;
+  const $i18n: (key:string, defaultWord?:string) => string;
   /**
    * @desc febs.
    */

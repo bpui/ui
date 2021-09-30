@@ -42,15 +42,11 @@ declare module 'vue/types/vue' {
        * @desc 设置或获取本地语言; 设置为 '' 则为获取浏览器默认的本地语言.
        */
       lang: string
-      /**
-       * @desc 设置或获取i18n对象.
-       */
-      langI18n: any
     }
     /**
-     * @desc 获取本地语言.
+     * @desc 获取本地语言. 如果 `key` 不存在则返回 `defaultWord`
      */
-    $lang: (key:string) => string
+    $i18n: (key:string, defaultWord?:string) => string;
     /**
      * @desc febs.
      */
