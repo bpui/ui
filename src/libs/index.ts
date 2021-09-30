@@ -49,6 +49,14 @@ function setup() {
   window['$UILibs'] = libs;
   window['$UINetwork'] = network;
   window['$Febs'] = febs;
+  window['$lang'] = function (k: string) {
+    let r = window['$i18n'](k, (libs as any).lang);
+    if (Array.isArray(r)) {
+      return r[0];
+    } else {
+      return r;
+    }
+  }
 }
 
 setup();

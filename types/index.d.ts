@@ -40,7 +40,7 @@ declare global {
   /**
    * @desc 获取本地语言.
    */
-  const $i18n: (key:string) => string;
+  const $lang: (key:string) => string;
   /**
    * @desc febs.
    */

@@ -47,7 +47,10 @@ declare module 'vue/types/vue' {
        */
       langI18n: any
     }
-
+    /**
+     * @desc 获取本地语言.
+     */
+    $lang: (key:string) => string
     /**
      * @desc febs.
      */
