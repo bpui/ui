@@ -42,8 +42,8 @@ function install(vue, options) {
   Object.defineProperty(vue.prototype, '$UINetwork', {
     get: function () { return window.$UINetwork; }
   })
-  Object.defineProperty(vue.prototype, '$lang', {
-    get: function () { return window.$lang; }
+  Object.defineProperty(vue.prototype, '$i18n', {
+    get: function () { return window.$i18n; }
   })
   Object.defineProperty(vue.prototype, '$Febs', {
     get: function () { return window.$Febs; }
