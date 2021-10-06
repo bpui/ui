@@ -136,7 +136,7 @@ const _UIDatePicker = {
           }}
           value={this.valueInput}
           on={{
-            'update:value': (e) => {
+            input: (e) => {
               this.valueInput = e
             },
           }}
@@ -150,7 +150,7 @@ const _UIDatePicker = {
             'update:visible': (e) => {
               this.pickerVisible = e
             },
-            'update:value': (e) => {
+            input: (e) => {
               this.valuePicker = e
             },
             confirm: (picker) => {

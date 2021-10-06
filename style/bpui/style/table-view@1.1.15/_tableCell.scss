@@ -6,6 +6,8 @@
     transition: all 0.2s cubic-bezier(0.4, 0, 0, 1);
 }
 
+
+
 .bp-tableView .bp-tableView__cells {
     box-sizing: border-box;
     display: block;
@@ -103,7 +105,7 @@
             content: " ";
             position: absolute;
             left: 0;
-            bottom: -1px;
+            bottom: 0px;
             right: 0;
             left: 0;
             height: 1px;
@@ -125,7 +127,7 @@
             content: " ";
             position: absolute;
             left: 0;
-            bottom: -1px;
+            bottom: 0px;
             right: 0;
             left: 0;
             height: 1px;
@@ -141,6 +143,18 @@
             .bp-tableView__cell_head .bp-tableView__cell__right:after {
                 content: none;
             }
+        }
+
+        .bp-input, .bp-input__focus,
+        .bp-input .bp-input__inner, .bp-input__focus .bp-input__inner {
+            width: 100%;
+            background-color: transparent !important;
+            border-color: transparent !important;
+            font-size: $bpTableViewCellFontSize;
+        }
+
+        .bp-input .bp-input__inner, .bp-input__focus .bp-input__inner {
+            padding: 0 !important;
         }
 
         .bp-switch, .bp-radio, .bp-checkbox, button, .bp-btn {
@@ -197,6 +211,20 @@
                 height: 25px;
                 width: 25px;
                 font-size: 25px;
+            }
+        }
+    }
+}
+
+.bp-tableView {
+    @include bp-isTablet {
+        padding: 0 20px;
+
+        .bp-tableView__cells {
+            border-radius: 10px;
+            &:before, &:after {
+                border-top: none;
+                border-bottom: none;
             }
         }
     }

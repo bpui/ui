@@ -14,6 +14,8 @@ import './base';
 import './notice';
 
 export * from './form';
+export * from './dialog';
+export * from './layout';
 
 // bpui plugin.
 import bpLibs from '@bpui/libs';

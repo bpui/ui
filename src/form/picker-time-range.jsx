@@ -175,7 +175,7 @@ const _UITimeRangePicker = {
           }}
           value={this.valueInput1}
           on={{
-            'update:value': (e) => {
+            input: (e) => {
               this.valueInput1 = e
             },
           }}
@@ -202,7 +202,7 @@ const _UITimeRangePicker = {
           }}
           value={this.valueInput2}
           on={{
-            'update:value': (e) => {
+            input: (e) => {
               this.valueInput2 = e
             },
           }}
@@ -213,7 +213,7 @@ const _UITimeRangePicker = {
           visible={this.pickerVisible1}
           value={this.valuePicker1}
           on={{
-            'update:value': (e) => {
+            input: (e) => {
               this.valuePicker1 = e
             },
             'update:visible': (e) => {
@@ -252,7 +252,7 @@ const _UITimeRangePicker = {
           visible={this.pickerVisible2}
           value={this.valuePicker2}
           on={{
-            'update:value': (e) => {
+            input: (e) => {
               this.valuePicker2 = e
             },
             'update:visible': (e) => {

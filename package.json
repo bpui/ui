@@ -1,8 +1,8 @@
 {
   "description": "bpui ui",
   "dependencies": {
-    "bpui.js": "^1.1.25",
-    "bpui.js.bundle": "^1.1.25",
+    "bpui.js": "^1.1.34",
+    "bpui.js.bundle": "^1.1.34",
     "js-cookie": "^3.0.1",
     "keymaster": "^1.6.2",
     "store2": "^2.12.0",

@@ -136,7 +136,7 @@ const _UITimePicker = {
           }}
           value={this.valueInput}
           on={{
-            'update:value': (e) => {
+            input: (e) => {
               this.valueInput = e
             },
           }}
@@ -150,7 +150,7 @@ const _UITimePicker = {
             'update:visible': (e) => {
               this.pickerVisible = e
             },
-            'update:value': (e) => {
+            input: (e) => {
               this.valuePicker = e
             },
             confirm: (picker) => {

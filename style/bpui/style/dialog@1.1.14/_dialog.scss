@@ -131,20 +131,22 @@
       }
     }
     &.bp-dialog__footThreeButton {
-      & > div {
-        display: flex;
-        flex-direction: row;
-      }
+      min-width: 280px;
       
       & > div {
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
       }
       
       button {
         @extend .bp-btnInfo;
+
+        &:last-child {
+          @extend .bp-btnPrimary;
+          margin-right: 0px;
+        }
       }
     }
   }

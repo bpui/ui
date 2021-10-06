@@ -1,6 +1,6 @@
 .bp-select {
     width: $bpSelectWidth;
-    display: inline-block;
+    display: flex;
     cursor: pointer;
     position: relative;
     margin: 2px;
@@ -21,6 +21,18 @@
         color: $bpSelectFocusTextColor;
     }
 
+    &.bp-select__disabled {
+        opacity: .5;
+        cursor: not-allowed;
+        touch-action: none;
+        pointer-events: none;
+    }
+
+    &.bp-select__readonly {
+        touch-action: none;
+        pointer-events: none;
+    }
+    
     .bp-select__arrowDown {
         position: absolute;
         right: 10px;

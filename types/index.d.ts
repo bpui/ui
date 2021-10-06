@@ -10,6 +10,9 @@ import bpDialog from '@bpui/dialog';
 export * from './actionsheet.d';
 export * from './picker.d';
 export * from './picker-date.d';
+export * from './select.d';
+export * from './dialog.d';
+export * from './popover.d';
 
 type LocaleMessage = string | LocaleMessageObject;
 interface LocaleMessageObject { [key: string]: LocaleMessage; }

@@ -85,8 +85,8 @@
         border: none;
         color: $bpInputTextColor;
         display: inline-block;
-        height: 40px;
-        line-height: 40px;
+        height: 30px;
+        line-height: 30px;
         outline: none;
         padding: 0 15px;
         transition: background-color .2s cubic-bezier(.645, .045, .355, 1);
@@ -162,7 +162,7 @@
                 height: 14px;
                 width: 14px;
                 font-size: 14px;
-                color: #F3F3F4;
+                color: #ffffff;
                 transform-origin: center;
                 transform: scale(0.5);
             }
@@ -206,5 +206,12 @@
         cursor: not-allowed;
         touch-action: none;
         pointer-events: none;
+    }
+
+    &[large] {
+        .bp-input__inner {
+            height: 38px;
+            line-height: 38px;
+        }
     }
 }

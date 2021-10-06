@@ -29,7 +29,7 @@ const _UIButton = {
     let dataRender = getRenderData(this);
     dataRender.class = ['ui-btn', 'ui-btnFill'];
     let children = this.$slots.default;
-    return createElement('div', dataRender, children);
+    return createElement('button', dataRender, children);
   }
 }
 

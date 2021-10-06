@@ -37,6 +37,8 @@
                     text-decoration: none;
                     padding: 10px 1em;
                     font-size: 14px;
+                    border-right: none;
+                    border-left: none;
 
                     &[type=warn] {
                         background-color: #ff3b30;
