@@ -1,37 +1,57 @@
 
 @font-face {
-  font-family: "PingFangSC";
+  font-family: "PingFangSCC";
+  src: url('~@bpui/ui/fonts/PingFangSC/PingFangSC-Thin.woff2') format('woff2');
+  font-weight: lighter;
+}
+@font-face {
+  font-family: "PingFangSCC";
   src: url('~@bpui/ui/fonts/PingFangSC/PingFangSC-Light.woff2') format('woff2');
   font-weight: 300;
 }
 @font-face {
-  font-family: "PingFangSC";
+  font-family: "PingFangSCC";
   src: url('~@bpui/ui/fonts/PingFangSC/PingFangSC-Regular.woff2') format('woff2');
   font-weight: 400;
 }
 @font-face {
-  font-family: "PingFangSC";
+  font-family: "PingFangSCC";
   src: url('~@bpui/ui/fonts/PingFangSC/PingFangSC-Regular.woff2') format('woff2');
   font-weight: normal;
 }
 @font-face {
-  font-family: "PingFangSC";
+  font-family: "PingFangSCC";
   src:  url('~@bpui/ui/fonts/PingFangSC/PingFangSC-Medium.woff2') format('woff2');
   font-weight: 500;
 }
 @font-face {
-  font-family: "PingFangSC";
+  font-family: "PingFangSCC";
   src:  url('~@bpui/ui/fonts/PingFangSC/PingFangSC-Medium.woff2') format('woff2');
-  font-weight: bold;
-}
-@font-face {
-  font-family: "PingFangSC";
-  src:  url('~@bpui/ui/fonts/PingFangSC/PingFangSC-Semibold.woff2') format('woff2');
   font-weight: 600;
 }
 @font-face {
-  font-family: "PingFangSC";
+  font-family: "PingFangSCC";
+  src:  url('~@bpui/ui/fonts/PingFangSC/PingFangSC-Semibold.woff2') format('woff2');
+  font-weight: 700;
+}
+@font-face {
+  font-family: "PingFangSCC";
+  src:  url('~@bpui/ui/fonts/PingFangSC/PingFangSC-Semibold.woff2') format('woff2');
+  font-weight: bold;
+}
+@font-face {
+  font-family: "PingFangSCC";
   src:  url('~@bpui/ui/fonts/PingFangSC/PingFangSC-Semibold.woff2') format('woff2');
   font-weight: bolder;
+}
+@font-face {
+  font-family: "PingFangSCC";
+  src:  url('~@bpui/ui/fonts/PingFangSC/PingFangSC-Semibold.woff2') format('woff2');
+  font-weight: 800;
+}
+@font-face {
+  font-family: "PingFangSCC";
+  src:  url('~@bpui/ui/fonts/PingFangSC/PingFangSC-Semibold.woff2') format('woff2');
+  font-weight: 900;
 }
 
