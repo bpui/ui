@@ -1,6 +1,6 @@
 <!--
 /**
-* Copyright (c) 2020 Copyright bp All Rights Reserved.
+* Copyright (c) 2020 Copyright bpui All Rights Reserved.
 * Author: lanck
 * Date: 2020-09-09 15:54
 * Desc: toast 组件

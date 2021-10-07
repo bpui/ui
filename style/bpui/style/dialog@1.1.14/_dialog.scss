@@ -1,5 +1,5 @@
 /**
-* Copyright (c) 2020 Copyright bp All Rights Reserved.
+* Copyright (c) 2020 Copyright bpui All Rights Reserved.
 * Author: lipengxiang
 * Date: 2020-02-28 17:01
 * Desc: 
@@ -7,7 +7,6 @@
 
 
 .bp-dialog {
-
   /* safari polyfill */
   @include bp-isPhone {
     position: fixed !important;
@@ -63,6 +62,9 @@
 
   .bp-dialog__main {
     padding: 20px 12px 20px;
+    min-width: 375px;
+    max-width: 99vw;
+    min-height: 150px;
   }
 
   .bp-dialog__foot {
@@ -160,5 +162,13 @@
     width: 18px;
     font-size: 18px;
     color: $bpDialogCloseColor;
+  }
+
+  &.bp-apiClass {
+    .bp-dialog__main {
+      min-width: initial;
+      max-width: initial;
+      min-height: initial;
+    }
   }
 }

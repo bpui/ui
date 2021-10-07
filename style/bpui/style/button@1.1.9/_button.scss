@@ -1,6 +1,6 @@
 
 /**
-* Copyright (c) 2020 Copyright bp All Rights Reserved.
+* Copyright (c) 2020 Copyright bpui All Rights Reserved.
 * Author: lipengxiang
 * Date: 2020-02-24 11:03
 * Desc: 
@@ -9,6 +9,7 @@
 button,
 .bp-btn,
 .ui-btn {
+  font-family: $bpFont;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;

@@ -9,9 +9,10 @@
             display: inline-block;
             font-size: 14px;
             box-sizing: border-box;
-            padding: 10px 1em;
+            padding: 5px 1em;
             margin-top: 0;
             margin-bottom: 0;
+            height: auto;
 
             &[type=warn] {
                 @extend .bp-popover__cellWarn;

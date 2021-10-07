@@ -13,6 +13,7 @@ import './libs';
 import './base';
 import './notice';
 
+export * from './libs';
 export * from './form';
 export * from './dialog';
 export * from './layout';
@@ -32,6 +33,8 @@ import bpSwitch from '@bpui/switch';
 import bpTabbar from '@bpui/tabbar';
 import bpTableView from '@bpui/table-view';
 import bpUploader from '@bpui/uploader';
+
+// import '../fonts/PingFangSC/font-method-FOUT.js';
 
 const INIT_KEY = '$$uiSysInited';
 

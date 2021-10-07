@@ -1,4 +1,5 @@
 .bp-tabbar {
+    font-family: $bpFont;
     /* animation to visible or hide */
     &.bp-tabbar-visible {
         opacity: 1 !important;

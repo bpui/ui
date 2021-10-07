@@ -4,9 +4,31 @@ import libs from '@bpui/libs';
 import { storage } from './storage';
 import { keyboard } from './keyboard';
 import { network } from './network';
+import navbar from '@bpui/navbar-view';
 
 export * from './forbidDebugger';
 export { setNetworkHandler } from './network';
+
+export function setNavbarDefaultCfg(cfg: {
+  /**
+   * default retain page dom in `push` method.
+   */
+  retainPageInPush?: boolean,
+}): void {
+  navbar.setNavbarDefaultCfg(cfg);
+}
+
+/**
+ * @desc: 注册app.
+ * @param routes: 此app所需的routes结构.
+ *      path='*' 的路由为404路由.
+ */
+export function registerApp(routes: {
+  routePath: Array<{ path: string; component: any; [key: string]: any }>;
+  basePath?: string;
+}): void {
+  libs.registerApp(routes.routePath, routes.basePath);
+}
 
 function setup() {
   if ((setup as any).installed) {

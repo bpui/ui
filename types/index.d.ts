@@ -96,3 +96,24 @@ export function forbidDebugger(): void;
  * 设置网络处理处理对象.
  */
 export function setNetworkHandler(handler: ui.network.INetworkHandler): void
+
+/**
+ * set navbarview default config.
+ */
+export function setNavbarDefaultCfg(cfg: {
+  /**
+   * default retain page dom in `push` method.
+   */
+  retainPageInPush?: boolean,
+}): void;
+
+
+/**
+ * @desc: 注册app.
+ * @param routes: 此app所需的routes结构.
+ *      path='*' 的路由为404路由.
+ */
+export function registerApp(routes: {
+  routePath: Array<{ path: string; component: any;[key: string]: any }>,
+  basePath?: string,
+}): void;
