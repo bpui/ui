@@ -1,10 +1,11 @@
 .bp-select {
     font-family: $bpFont;
     width: $bpSelectWidth;
-    display: flex;
+    display: inline-flex;
     cursor: pointer;
     position: relative;
     margin: 2px;
+    margin-right: 15px;
     align-items: center;
     border-style: inset;
     border-color: initial;
@@ -15,6 +16,8 @@
     font-weight: $bpSelectFontWeight;
     color: $bpSelectTextColor;
     background-color: $bpSelectBgColor;
+    transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), border 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    min-width: 140px;
 
     &.bp-select__selected {
         border: 1px solid $bpSelectFocusBorderColor;
