@@ -19,6 +19,9 @@
     transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), border 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     min-width: 140px;
 
+    $bpSelectHeight: 32px;
+    $bpSelectHeightLarge: 40px;
+
     &.bp-select__selected {
         border: 1px solid $bpSelectFocusBorderColor;
         background-color: $bpSelectFocusBgColor;
@@ -37,10 +40,10 @@
         pointer-events: none;
     }
     
-    .bp-select__arrowDown {
+    .bp-select__arrowDown, .bp-select_clearable {
         position: absolute;
         right: 10px;
-        top: (42px - 12px) / 2;
+        top: ($bpSelectHeight - 12px) / 2;
         backface-visibility: visible;
         transition: transform .3s;
         transform: rotate(0deg);
@@ -61,8 +64,8 @@
         box-sizing: border-box;
         width: 100%;
         padding: 0 30px 0 15px;
-        height: 40px;
-        line-height: 40px;
+        height: $bpSelectHeight - 2px;
+        line-height: $bpSelectHeight - 2px;
 
         .bp-select__mainContain {
             min-height: 0;
@@ -71,7 +74,7 @@
             @extend .bp-ellipsis;
 
             .bp-select__mainContain_placeholder {
-                color: #858588;
+                color: #adadad;
                 font-size: $bpSelectFontSize;
             }
 
@@ -101,8 +104,8 @@
     &.bp-select__multiple {
         .bp-select__main {
             height: auto;
-            min-height: 40px;
-            max-height: 40px * 2;
+            min-height: $bpSelectHeight - 2px;
+            max-height: ($bpSelectHeight - 2px) * 2;
 
             .bp-select__mainContain {
                 @extend .bp-ellipsisMultiline2;
@@ -120,8 +123,8 @@
                     align-self: auto;
                     display: inline-flex;
                     align-items: center;
-                    height: 30px;
-                    line-height: 30px;
+                    height: $bpSelectHeight - 2px - 6px;
+                    line-height: $bpSelectHeight - 2px - 6px;
                     flex-shrink: 0;
                     pointer-events: initial;
                     touch-action: initial;
@@ -148,6 +151,31 @@
                     &:hover {
                         background: #ababab;
                         color: #efefef;
+                    }
+                }
+            }
+        }
+    }
+
+    &[large] {
+        .bp-select__main {
+            height: $bpSelectHeightLarge - 2px;
+            line-height: $bpSelectHeightLarge - 2px;
+        }
+        .bp-select__arrowDown {
+            top: ($bpSelectHeightLarge - 12px) / 2;
+        }
+
+        &.bp-select__multiple {
+            .bp-select__main {
+                height: auto;
+                min-height: $bpSelectHeightLarge - 2px;
+                max-height: ($bpSelectHeightLarge - 2px) * 2;
+
+                .bp-select__mainContain {
+                    .bp-select__label {
+                        height: $bpSelectHeightLarge - 2px - 10px;
+                        line-height: $bpSelectHeightLarge - 2px - 10px;
                     }
                 }
             }
