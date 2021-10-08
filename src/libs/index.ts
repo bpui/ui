@@ -5,6 +5,7 @@ import { storage } from './storage';
 import { keyboard } from './keyboard';
 import { network } from './network';
 import navbar from '@bpui/navbar-view';
+import dialog from '@bpui/dialog';
 
 export * from './forbidDebugger';
 export { setNetworkHandler } from './network';
@@ -28,6 +29,38 @@ export function registerApp(routes: {
   basePath?: string;
 }): void {
   libs.registerApp(routes.routePath, routes.basePath);
+}
+
+export function getLayout(layouts:any, newRoute:any, oldRoute:any) {
+  let newRoutePath = newRoute.path;
+  if (newRoutePath[0] == '/') newRoutePath = newRoutePath.substring(1);
+  for (let p in layouts) {
+    if (p[0] == '/') p = p.substring(1);
+    if (newRoutePath == p || newRoutePath.indexOf(p + '/') >= 0) {
+      return (layouts /*as any*/)[p];
+    }
+  }
+
+  // 默认值.
+  return (layouts /*as any*/)['default'];
+}
+
+
+export const hook = {
+  /**
+   * 添加页面抖动hook.
+   * 回调方法中的paddingRight参数表示发生抖动时页面中fixed元素应该在原有paddingRight值上增加的像素值.
+   */
+  addWidgetShake(foo: (paddingRight: number) => void) {
+    dialog.hook.addWidgetShake(foo);
+  },
+
+  /**
+   * 移除页面抖动hook.
+   */
+  removeWidgetShake(foo:(paddingRight:number)=>void) {
+    dialog.hook.removeWidgetShake(foo);
+  }
 }
 
 function setup() {

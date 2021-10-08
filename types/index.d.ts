@@ -3,6 +3,8 @@
 /// <reference path="./storage.d.ts" />
 /// <reference path="./network.d.ts" />
 /// <reference path="./keyboard.d.ts" />
+/// <reference types="@bpui/libs" />
+/// <reference types="@bpui/navbar-view" />
 
 import * as febs from 'febs-browser';
 import bpDialog from '@bpui/dialog';
@@ -117,3 +119,25 @@ export function registerApp(routes: {
   routePath: Array<{ path: string; component: any;[key: string]: any }>,
   basePath?: string,
 }): void;
+
+/**
+ * 通过route来获得适合的layout组件.
+ * @param layouts
+ * @param newRoute
+ * @param oldRoute
+ */
+export function getLayout(layouts: any, newRoute: bp.Location, oldRoute: bp.Location): any;
+
+export interface Hook {
+  /**
+   * @desc: 添加页面抖动hook.
+   * 回调方法中的paddingRight参数表示发生抖动时页面中fixed元素应该在原有paddingRight值上增加的像素值.
+   */
+  addWidgetShake(foo: (paddingRight: number) => void): void;
+
+  /**
+   * @desc: 移除页面抖动hook.
+   */
+  removeWidgetShake(foo: (paddingRight: number) => void): void;
+}
+export const hook: Hook;
