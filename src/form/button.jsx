@@ -27,7 +27,7 @@ export const UIButtonGroup = styled(_UIButtonGroup)`
 const _UIButton = {
   render(createElement) {
     let dataRender = getRenderData(this);
-    dataRender.class = ['ui-btn', 'ui-btnFill'];
+    dataRender.class = ['ui-btn'];
     let children = this.$slots.default;
     return createElement('button', dataRender, children);
   }

@@ -87,15 +87,15 @@ button,
 button,
 .bp-btn,
 .ui-btn {
-  font-weight: map-get(map-get($bpButtonDefault, Info), fontWeight);
-  color: map-get(map-get($bpButtonDefault, Info), color);
-  border: map-get(map-get($bpButtonDefault, Info), borderColor);
-  background-color: map-get(map-get($bpButtonDefault, Info), bgColor);
+  font-weight: map-get($bpButtonPrimary, fontWeight);
+  color: map-get($bpButtonPrimary, color);
+  border: map-get($bpButtonPrimary, borderColor);
+  background-color: map-get($bpButtonPrimary, bgColor);
 
   &:hover {
-    color: map-get(map-get($bpButtonDefault, Info), hover_color);
-    border: map-get(map-get($bpButtonDefault, Info), hover_borderColor);
-    background-color: map-get(map-get($bpButtonDefault, Info), hover_bgColor);
+    color: map-get($bpButtonPrimary, hover_color);
+    border: map-get($bpButtonPrimary, hover_borderColor);
+    background-color: map-get($bpButtonPrimary, hover_bgColor);
   }
 
   &.bp-btnPlain,
@@ -237,6 +237,59 @@ button,
         color: map-get(map-get($bpButtonFills, Warning), hover_color);
         border: map-get(map-get($bpButtonFills, Warning), hover_borderColor);
         background-color: map-get(map-get($bpButtonFills, Warning), hover_bgColor);
+      }
+    }
+  }
+
+
+  /** info */
+  &[info] {
+    font-weight: map-get(map-get($bpButtonDefault, Info), fontWeight);
+    color: map-get(map-get($bpButtonDefault, Info), color);
+    border: map-get(map-get($bpButtonDefault, Info), borderColor);
+    background-color: map-get(map-get($bpButtonDefault, Info), bgColor);
+
+    &:hover {
+      color: map-get(map-get($bpButtonDefault, Info), hover_color);
+      border: map-get(map-get($bpButtonDefault, Info), hover_borderColor);
+      background-color: map-get(map-get($bpButtonDefault, Info), hover_bgColor);
+    }
+
+    &.bp-btnPlain,
+    &.ui-btnPlain {
+      font-weight: map-get(map-get($bpButtonPlains, Info), fontWeight);
+      color: map-get(map-get($bpButtonPlains, Info), color);
+      border: map-get(map-get($bpButtonPlains, Info), borderColor);
+      background-color: map-get(map-get($bpButtonPlains, Info), bgColor);
+      &:hover {
+        color: map-get(map-get($bpButtonPlains, Info), hover_color);
+        border: map-get(map-get($bpButtonPlains, Info), hover_borderColor);
+        background-color: map-get(map-get($bpButtonPlains, Info), hover_bgColor);
+      }
+    }
+    &.bp-btnBorder,
+    &.ui-btnBorder {
+      font-weight: map-get(map-get($bpButtonBorders, Info), fontWeight);
+      color: map-get(map-get($bpButtonBorders, Info), color);
+      border: map-get(map-get($bpButtonBorders, Info), borderColor);
+      background-color: map-get(map-get($bpButtonBorders, Info), bgColor);
+      &:hover {
+        color: map-get(map-get($bpButtonBorders, Info), hover_color);
+        border: map-get(map-get($bpButtonBorders, Info), hover_borderColor);
+        background-color: map-get(map-get($bpButtonBorders, Info), hover_bgColor);
+      }
+    }
+    
+    &.bp-btnFill,
+    &.ui-btnFill {
+      font-weight: map-get(map-get($bpButtonFills, Info), fontWeight);
+      color: map-get(map-get($bpButtonFills, Info), color);
+      border: map-get(map-get($bpButtonFills, Info), borderColor);
+      background-color: map-get(map-get($bpButtonFills, Info), bgColor);
+      &:hover {
+        color: map-get(map-get($bpButtonFills, Info), hover_color);
+        border: map-get(map-get($bpButtonFills, Info), hover_borderColor);
+        background-color: map-get(map-get($bpButtonFills, Info), hover_bgColor);
       }
     }
   }

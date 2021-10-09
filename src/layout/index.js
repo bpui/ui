@@ -4,6 +4,7 @@ import * as febs from 'febs-browser';
 
 import bpNavbarView from '@bpui/navbar-view';
 import * as tableview from './tableview';
+import * as table from './table';
 
 // global component.
 function injectGlobal() {
@@ -19,6 +20,14 @@ function injectGlobal() {
 
   Vue.component('ui-navbar-view', bpNavbarView.bpNavbarView);
   Vue.component('ui-navbar', bpNavbarView.bpNavbar);
+
+  Vue.component('ui-table', table.UITable);
+  Vue.component('ui-thead', table.UIThead);
+  Vue.component('ui-tbody', table.UITbody);
+  Vue.component('ui-tfoot', table.UITfoot);
+  Vue.component('ui-tr', table.UITr);
+  Vue.component('ui-th', table.UITh);
+  Vue.component('ui-td', table.UITd);
 
   injectGlobal.installed = true;
 }
