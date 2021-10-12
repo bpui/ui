@@ -1,0 +1,32 @@
+@import "./theme";
+
+//遍历主题map
+@mixin ui-themeify($theme-names: $themes) {
+  @each $theme-name,
+  $theme-map in $theme-names {
+    //!global 把局部变量强升为全局变量
+    $theme-map: $theme-map !global;
+
+    //判断html的data-theme的属性值  #{}是sass的插值表达式
+    //& sass嵌套里的父容器标识   @content是混合器插槽，像vue的slot
+    html[data-theme="#{$theme-name}"] {
+      @content;
+    }
+  }
+}
+
+/**
+ * 获得指定key的主题颜色.
+ */
+@function getThemeValue($key) {
+  @return map-get($theme-map, $key);
+}
+
+/**
+ * 设置指定主题的样式.
+ */
+@mixin ui-themeify-by($themeName) {
+  html[data-theme="#{$themeName}"] {
+    @content;
+  }
+}

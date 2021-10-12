@@ -1,0 +1,29 @@
+@import '../../../../theme';
+
+// 主题变量 color
+$uiPopoverThemes: (
+  light:(
+    /* 对话框颜色 */
+    bpPopoverBgColor: rgba(255, 255, 255, 0.99),
+    bpPopoverBorderColor: rgb(224, 224, 224),
+    bpPopoverBorderShadowColor: rgba(16, 27, 79, 0.1),
+    bpPopoverTextColor: rgb(22, 22, 22),
+    bpPopoverCellBorderColor: rgba(253, 253, 253, 0.99),
+    bpPopoverCellHoverBgColor: #eee,
+    bpPopoverBgColorRow: rgba(0, 0, 0, 0.9),
+    bpPopoverTextColorRow: rgb(255, 255, 255),
+    bpPopoverCellBorderColorRow: rgb(70, 70, 70),
+  ),
+  dark: (
+    /* 对话框颜色 */
+    bpPopoverBgColor: #373737,
+    bpPopoverBorderColor: #404040,
+    bpPopoverBorderShadowColor: rgba(16, 27, 79, 0.1),
+    bpPopoverTextColor: map-get(map-get($themes, dark), title),
+    bpPopoverCellBorderColor: #484848,
+    bpPopoverCellHoverBgColor: #525252,
+    bpPopoverBgColorRow: rgba(0, 0, 0, 0.9),
+    bpPopoverTextColorRow: rgb(255, 255, 255),
+    bpPopoverCellBorderColorRow: rgb(70, 70, 70)
+  )
+)

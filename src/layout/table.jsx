@@ -282,10 +282,8 @@ injectGlobal`
 
   .ui-table {
     overflow: auto;
-    box-shadow: 1px 1px 5px 0px #c2c8d728;
     table {
       border: none;
-      background: #fff;
       font-family: "PingFang SC";
       font-size: 14px;
       table-layout: fixed;
@@ -297,12 +295,11 @@ injectGlobal`
     
     tr {
       min-height: 41px;
-      background: #fff;
+      transition: background-color .25s ease;
     }
 
     th, td {
       word-break: break-word;
-      border-bottom: 1px solid #e8e8e8;
       border: none;
       margin: 0;
       padding: 10px 10px;
@@ -324,24 +321,6 @@ injectGlobal`
       -webkit-border-vertical-spacing: 0px;
     }
 
-    tbody {
-      tr {
-        &:hover {
-          background-color: #f5f7fa;
-        }
-      }
-    }
-
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      th, td {
-        border-bottom: none;
-        background-size: 100% 1px;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        background-image: linear-gradient(0deg, #e8e8e8 49%, transparent 51%, transparent);
-      }
-    }
-
     ::-webkit-scrollbar {
       width: 8px;
       height: 8px;
@@ -352,34 +331,140 @@ injectGlobal`
       }
     }
 
-    /* 滚动条的滑轨背景颜色 */
-    ::-webkit-scrollbar-track {
-      background-color: rgba(0, 0, 0, 0.001);
-    }
-
 
     /* 滑块颜色 */
     ::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0.25);
 
       border-radius: 4px;
       @media screen and (max-width: 767px) {
         border-radius: 2px;
-        background-color: rgba(0, 0, 0, 0);
       }
     }
 
     /* 滑轨两头的监听按钮颜色 */
     ::-webkit-scrollbar-button {
-      background-color: rgba(0, 0, 0, 0.12);
       height: 0px;
       width: 0px;
     }
+  }
 
-    /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
-    ::-webkit-scrollbar-corner {
-      background-color: rgba(0, 0, 0, 0.1);
+  html[data-theme="light"] {
+    .ui-table {
+      box-shadow: 1px 1px 5px 0px #c2c8d728;
+      table {
+        background: #fff;
+      }
+      
+      tr {
+        background: #fff;
+      }
+
+      th, td {
+        border-bottom: 1px solid #e8e8e8;
+      }
+
+      tbody {
+        tr {
+          &:hover {
+            background-color: #f5f7fa;
+          }
+        }
+      }
+
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        th, td {
+          border-bottom: none;
+          background-size: 100% 1px;
+          background-repeat: no-repeat;
+          background-position: bottom;
+          background-image: linear-gradient(0deg, #e8e8e8 49%, transparent 51%, transparent);
+        }
+      }
+
+      /* 滚动条的滑轨背景颜色 */
+      ::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, 0.001);
+      }
+
+
+      /* 滑块颜色 */
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.25);
+
+        @media screen and (max-width: 767px) {
+          background-color: rgba(0, 0, 0, 0);
+        }
+      }
+
+      /* 滑轨两头的监听按钮颜色 */
+      ::-webkit-scrollbar-button {
+        background-color: rgba(0, 0, 0, 0.12);
+      }
+
+      /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+      ::-webkit-scrollbar-corner {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
     }
   }
 
+  html[data-theme="dark"] {
+    .ui-table {
+      box-shadow: 1px 1px 5px 0px rgba(0,0,0,13%);
+      table {
+        background: #373737;
+      }
+      
+      tr {
+        background: #373737;
+      }
+
+      th, td {
+        border-bottom: 1px solid #2A282C;
+      }
+
+      tbody {
+        tr {
+          &:hover {
+            background-color: #424242;
+          }
+        }
+      }
+
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        th, td {
+          border-bottom: none;
+          background-size: 100% 1px;
+          background-repeat: no-repeat;
+          background-position: bottom;
+          background-image: linear-gradient(0deg, #2A282C 49%, transparent 51%, transparent);
+        }
+      }
+
+      /* 滚动条的滑轨背景颜色 */
+      ::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, 0.001);
+      }
+
+
+      /* 滑块颜色 */
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.78);
+
+        @media screen and (max-width: 767px) {
+          background-color: rgba(0, 0, 0, 0);
+        }
+      }
+
+      /* 滑轨两头的监听按钮颜色 */
+      ::-webkit-scrollbar-button {
+        background-color: rgba(0, 0, 0, 0.12);
+      }
+
+      /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+      ::-webkit-scrollbar-corner {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
 `;

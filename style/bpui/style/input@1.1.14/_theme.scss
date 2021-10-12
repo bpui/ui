@@ -1,0 +1,33 @@
+@import '../../../../theme';
+
+// 主题变量 color
+$uiInputThemes: (
+  light:(
+    /* 颜色 */
+    bpInputBgColor: #dcdcdc,
+    bpInputBorderColor: #dcdfe6,
+    bpInputTextColor: map-get(map-get($themes, light), text),
+    bpInputTextWarnColor: map-get(map-get($themes, light), warn),
+    bpInputFocusBgColor: #ffffff,
+    bpInputFocusBorderColor: map-get(map-get($themes, light), primary),
+    bpInputFocusTextColor: #424242,
+    bpInputFocusTextWarnColor: map-get(map-get($themes, light), warn),
+    bpInputAdditionLabelColor: #7b7b7b,
+    bpInputAdditionIconColor: #000,
+    bpInputClearBtnColor: #b7b7b7
+  ),
+  dark: (
+    /* 颜色 */
+    bpInputBgColor: #373737,
+    bpInputBorderColor: #525252,
+    bpInputTextColor: map-get(map-get($themes, dark), text),
+    bpInputTextWarnColor: map-get(map-get($themes, dark), warn),
+    bpInputFocusBgColor: #535353,
+    bpInputFocusBorderColor: map-get(map-get($themes, dark), primary),
+    bpInputFocusTextColor: lighten(map-get(map-get($themes, dark), text), 20%),
+    bpInputFocusTextWarnColor: map-get(map-get($themes, dark), warn),
+    bpInputAdditionLabelColor: #7a8396,
+    bpInputAdditionIconColor: #7a8396,
+    bpInputClearBtnColor: #3f3f3f
+  )
+)

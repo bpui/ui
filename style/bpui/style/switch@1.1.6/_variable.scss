@@ -6,16 +6,10 @@
 */
 
 /* 字体 */
-$bpSwitchFontSize: 0.9rem !default;
+$bpSwitchFontSize: 14px !default;
 $bpSwitchFontWeight: 400 !default;
 
 /* 尺寸 */
 $bpSwitchSize: 32px !default;
 
-/* 颜色 */
-$bpSwitchBgOnColor: $bpColorPrimary !default;
-$bpSwitchBgOffColor: #fff !default;
-/* 中间标记的颜色 */
-$bpSwitchTickColor: #fff !default;
-/* label颜色 */
-$bpSwitchLabelColor: #606266 !default;
+

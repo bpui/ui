@@ -6,16 +6,9 @@
 */
 
 /* title */
-$bpTableViewTitleColor: #999;
-$bpTableViewTitleFontSize: 14px;
+$bpTableViewTitleFontSize: 14px !default;
 
 /* tableview cell */
-$bpTableViewCellBgColor: rgb(255, 255, 255);
-$bpTableViewCellFontColor: rgb(0, 0, 0);
-$bpTableViewCellRightFontColor: #999;
-$bpTableViewCellFontSize: 17px;
-$bpTableViewCellHeight: 56px;
-$bpTableViewCellBorderColor: #e5e5e5;
-$bpTableViewCellNextArrowColor: #a2a2a2;
-$bpTableViewCellNextArrowSize: 16px;
-
+$bpTableViewCellFontSize: 17px !default;
+$bpTableViewCellHeight: 56px !default;
+$bpTableViewCellNextArrowSize: 16px !default;

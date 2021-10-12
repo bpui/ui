@@ -1,0 +1,23 @@
+@import '../../../../theme';
+
+// 主题变量 color
+$uiRadioThemes: (
+  light:(
+    /* 颜色 */
+    bpRadioBgColor: map-get(map-get($themes, light), primary),
+    bpRadioBgColor2: #fff,
+    /* 中间勾标记的颜色 */
+    bpRadioTickColor: #fff,
+    /* label颜色 */
+    bpRadioLabelColor: map-get(map-get($themes, light), text),
+  ),
+  dark: (
+    /* 颜色 */
+    bpRadioBgColor: map-get(map-get($themes, dark), primary),
+    bpRadioBgColor2: #A8A7A9,
+    /* 中间勾标记的颜色 */
+    bpRadioTickColor: #fff,
+    /* label颜色 */
+    bpRadioLabelColor: map-get(map-get($themes, dark), text),
+  )
+)

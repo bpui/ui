@@ -6,6 +6,8 @@
 * Desc: 
 */
 @import '../libs@1.1.7/variable';
+@import "~@bpui/ui/var";
 @import './variable';
+@import './theme';
 @import './button';
 @import './buttonGroup';

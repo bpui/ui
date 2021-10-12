@@ -77,6 +77,11 @@ function _net(url: string, option: /*bp.network.FetchOption*/any): Promise<any> 
       defaultOption.headers = defaultOption.headers || {};
       defaultOption.headers['Content-Type'] = 'application/x-www-form-urlencoded';
     }
+    else if (defaultOption.contentType == 'textPlain') {
+      defaultOption.body = defaultOption.body;
+      defaultOption.headers = defaultOption.headers || {};
+      defaultOption.headers["Content-Type"] = "text/plain";
+    }
     else {
       defaultOption.body = JSON.stringify(defaultOption.body);
       defaultOption.headers = defaultOption.headers || {};

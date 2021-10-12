@@ -1,0 +1,25 @@
+@import '../../../../theme';
+
+// 主题变量 color
+$uiCheckboxThemes: (
+  light:(
+    /* 颜色 */
+    bpCheckboxBgColor: map-get(map-get($themes, light), primary),
+    bpCheckboxBgColor2: #fff,
+    /* 中间勾标记的颜色 */
+    bpCheckboxTickColor: #fff,
+    /* label颜色 */
+    bpCheckboxLabelColor: map-get(map-get($themes, light), text),
+    bpCheckboxBorderColor: #dcdfe6,
+  ),
+  dark: (
+    /* 颜色 */
+    bpCheckboxBgColor: map-get(map-get($themes, dark), primary),
+    bpCheckboxBgColor2: #A8A7A9,
+    /* 中间勾标记的颜色 */
+    bpCheckboxTickColor: #fff,
+    /* label颜色 */
+    bpCheckboxLabelColor: map-get(map-get($themes, dark), text),
+    bpCheckboxBorderColor: #A8A7A9,
+  )
+)

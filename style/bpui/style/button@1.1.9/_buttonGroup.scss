@@ -6,37 +6,43 @@
 * Desc: 
 */
 
-.bp-btnGroup,
-.ui-btnGroup {
-  margin: 2px;
-  display: inline-block;
-  border-radius: $bpButtonBorderRadius;
-  border: 1px solid $bpButtonGroupBorderColor;
-  font-size: 0px;
+@import "~@bpui/ui/var";
 
-  & > .bp-btn,
-  & > .ui-btn,
-  & > button {
-    height: 32px;
-    border-radius: 0;
-    border: none;
-    margin: 0;
-    min-width: 80px;
-    justify-content: center;
-    align-items: center;
-    display: inline-flex;
-    font-size: $bpButtonFontSize;
-    
-    &:hover {
+@include ui-themeify {
+  .bp-btnGroup,
+  .ui-btnGroup {
+    margin: 2px;
+    display: inline-block;
+    border-radius: $bpButtonBorderRadius;
+    font-size: 0px;
+    border: 1px solid rgba(getThemeValue(primary), 0.7);
+
+    & > .bp-btn,
+    & > .ui-btn,
+    & > button {
+      height: 32px;
       border-radius: 0;
       border: none;
-      margin: 0;  
+      margin: 0;
+      min-width: 80px;
+      justify-content: center;
+      align-items: center;
+      display: inline-flex;
+      font-size: $bpButtonFontSize;
+      
+      &:hover {
+        border-radius: 0;
+        border: none;
+        margin: 0;  
+      }
+      // &:not(:first-child) {
+      //   border-left: 1px solid $bpButtonGroupBorderColor;
+      //   &:hover {
+      //     border-left: 1px solid $bpButtonGroupBorderColor;
+      //   }
+      // }
     }
-    // &:not(:first-child) {
-    //   border-left: 1px solid $bpButtonGroupBorderColor;
-    //   &:hover {
-    //     border-left: 1px solid $bpButtonGroupBorderColor;
-    //   }
-    // }
   }
 }
+
+  

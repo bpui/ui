@@ -6,16 +6,10 @@
 */
 
 /* 字体 */
-$bpCheckboxFontSize: 0.9rem !default;
+$bpCheckboxFontSize: 14px !default;
 $bpCheckboxFontWeight: 400 !default;
 
 /* 尺寸 */
 $bpCheckboxSize: 18px !default;
 $bpCheckboxRadius: 2px !default;
 
-/* 颜色 */
-$bpCheckboxBgColor: $bpColorPrimary !default;
-/* 中间勾标记的颜色 */
-$bpCheckboxTickColor: #fff !default;
-/* label颜色 */
-$bpCheckboxLabelColor: #606266 !default;

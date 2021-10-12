@@ -1,0 +1,25 @@
+@import '../../../../theme';
+
+// 主题变量 color
+$uiPickerThemes: (
+  light:(
+    bpPickerBgColor: rgba(255, 255, 255, 0.98),
+    bpPickerBorderColor: rgba(0,0,0,.1),
+    bpPickerToolbarColor: darken(#111, 10%),
+    bpPickerTextColor: map-get(map-get($themes, light), text),
+    bpPickerCheckColor: map-get(map-get($themes, light), primary),
+    bpPickerCheckBorderColor: #d4d4d4,
+    bpPickerMaskColor: #fff,
+    bpPickerMaskBorder: #e5e5e5,
+  ),
+  dark: (
+    bpPickerBgColor: rgba(#373737, 0.98),
+    bpPickerBorderColor: #404040,
+    bpPickerToolbarColor: darken(#111, 10%),
+    bpPickerTextColor: map-get(map-get($themes, dark), text),
+    bpPickerCheckColor: map-get(map-get($themes, dark), primary),
+    bpPickerCheckBorderColor: #484848,
+    bpPickerMaskColor: #373737,
+    bpPickerMaskBorder: #202020,
+  )
+)

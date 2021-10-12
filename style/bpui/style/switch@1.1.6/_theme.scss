@@ -1,0 +1,23 @@
+@import '../../../../theme';
+
+// 主题变量 color
+$uiSwitchThemes: (
+  light:(
+    /* 颜色 */
+    bpSwitchBgOnColor: map-get(map-get($themes, light), primary),
+    bpSwitchBgOffColor: #fff,
+    /* 中间勾标记的颜色 */
+    bpSwitchTickColor: #fff,
+    /* label颜色 */
+    bpSwitchLabelColor: map-get(map-get($themes, light), text),
+  ),
+  dark: (
+    /* 颜色 */
+    bpSwitchBgOnColor: map-get(map-get($themes, dark), primary),
+    bpSwitchBgOffColor: #5e5e5e,
+    /* 中间勾标记的颜色 */
+    bpSwitchTickColor: #a6b8cb,
+    /* label颜色 */
+    bpSwitchLabelColor: map-get(map-get($themes, dark), text),
+  )
+)

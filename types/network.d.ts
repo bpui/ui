@@ -12,7 +12,7 @@ declare namespace ui {
       /**
        * @desc 请求体格式. 默认为json.
        */
-      contentType?: 'json' | 'formData',
+      contentType?: 'json' | 'formData' | 'textPlain',
     }
 
     /**

@@ -1,218 +1,228 @@
 
-.bp-input {
-    font-family: $bpFont;
-    width: $bpInputWidth;
-    // display: inline-flex;
-    display: flex;
-    position: relative;
-    margin: 2px;
-    align-items: center;
-    border-style: inset;
-    border-color: initial;
-    border-image: initial;
-    border-radius: 0px;
-    border: 1px solid $bpInputBorderColor;
-    background-color: $bpInputBgColor;
-    transition: background-color .2s cubic-bezier(.645, .045, .355, 1), border .2s cubic-bezier(.645, .045, .355, 1);
+@include ui-themeify($uiInputThemes) {
+    .bp-input {
+        font-family: $bpFont;
+        width: $bpInputWidth;
+        // display: inline-flex;
+        display: flex;
+        position: relative;
+        margin: 2px;
+        align-items: center;
+        border-style: inset;
+        border-color: initial;
+        border-image: initial;
+        border-radius: 0px;
+        border: 1px solid getThemeValue(bpInputBorderColor);
+        background-color: getThemeValue(bpInputBgColor);
+        transition: background-color .2s cubic-bezier(.645, .045, .355, 1), border .2s cubic-bezier(.645, .045, .355, 1);
 
-    .bp-input__prefixIcon {
-        margin-left: 10px;
-        cursor: pointer;
-        flex-grow: 0;
-        height: 16px !important;
-        width: 16px !important;
-        font-size: 16px !important;
-        background-color: transparent;
-    }
-
-    .bp-input__suffixIcon {
-        margin-right: 10px;
-        cursor: pointer;
-        flex-grow: 0;
-        height: 16px !important;
-        width: 16px !important;
-        font-size: 16px !important;
-        background-color: transparent;
-    }
-
-    .bp-input__prefixLabel {
-        text-align: center;
-        min-width: $bpInputAdditionLabelWidth;
-        color: $bpInputAdditionLabelColor;
-        font-size: 10px;
-        flex-shrink: 0;
-        padding-left: 4px;
-        box-sizing: border-box;
-        background-color: transparent;
-    }
-
-    .bp-input__suffixLabel {
-        text-align: center;
-        min-width: $bpInputAdditionLabelWidth;
-        color: $bpInputAdditionLabelColor;
-        font-size: 10px;
-        flex-shrink: 0;
-        padding-right: 4px;
-        box-sizing: border-box;
-        background-color: transparent;
-    }
-
-    input {
-        -webkit-writing-mode: horizontal-tb !important;
-        text-rendering: auto;
-        letter-spacing: normal;
-        color: $bpInputTextColor;
-        word-spacing: normal;
-        text-transform: none;
-        text-indent: 0px;
-        text-shadow: none;
-        display: inline-block;
-        text-align: start;
-        -webkit-appearance: textfield;
-        -webkit-rtl-ordering: logical;
-        cursor: text;
-        margin: 0em;
-        font-size: $bpInputFontSize;
-        font-weight: $bpInputFontWeight;
-        padding: 1px;
-        width: 100%;
-    }
-
-    .bp-input__inner {
-        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-        -webkit-appearance: none;
-        background-image: none;
-        box-sizing: border-box;
-        border: none;
-        color: $bpInputTextColor;
-        display: inline-block;
-        height: 30px;
-        line-height: 30px;
-        outline: none;
-        padding: 0 15px;
-        transition: background-color .2s cubic-bezier(.645, .045, .355, 1);
-        flex-grow: 1;
-        width: 100%;
-        background-color: $bpInputBgColor;
-
-        &:focus {
-            outline: none;
+        .bp-input__prefixIcon {
+            margin-left: 10px;
+            cursor: pointer;
+            flex-grow: 0;
+            height: 16px !important;
+            width: 16px !important;
+            font-size: 16px !important;
+            background-color: transparent;
+            
+            i {
+                color: getThemeValue(bpInputAdditionIconColor) !important;
+            }
         }
-    }
 
-    &.bp-input__focus {
-        border-color: $bpInputFocusBorderColor;
-        background: $bpInputFocusBgColor !important;
+        .bp-input__suffixIcon {
+            margin-right: 10px;
+            cursor: pointer;
+            flex-grow: 0;
+            height: 16px !important;
+            width: 16px !important;
+            font-size: 16px !important;
+            background-color: transparent;
+
+            i {
+                color: getThemeValue(bpInputAdditionIconColor) !important;
+            }
+        }
+
+        .bp-input__prefixLabel {
+            text-align: center;
+            min-width: $bpInputAdditionLabelWidth;
+            color: getThemeValue(bpInputAdditionLabelColor);
+            font-size: 10px;
+            flex-shrink: 0;
+            padding-left: 4px;
+            box-sizing: border-box;
+            background-color: transparent;
+        }
+
+        .bp-input__suffixLabel {
+            text-align: center;
+            min-width: $bpInputAdditionLabelWidth;
+            color: getThemeValue(bpInputAdditionLabelColor);
+            font-size: 10px;
+            flex-shrink: 0;
+            padding-right: 4px;
+            box-sizing: border-box;
+            background-color: transparent;
+        }
+
+        input {
+            -webkit-writing-mode: horizontal-tb !important;
+            text-rendering: auto;
+            letter-spacing: normal;
+            color: getThemeValue(bpInputTextColor);
+            word-spacing: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            display: inline-block;
+            text-align: start;
+            -webkit-appearance: textfield;
+            -webkit-rtl-ordering: logical;
+            cursor: text;
+            margin: 0em;
+            font-size: $bpInputFontSize;
+            font-weight: $bpInputFontWeight;
+            padding: 1px;
+            width: 100%;
+        }
 
         .bp-input__inner {
-            background: $bpInputFocusBgColor !important;
-            color: $bpInputFocusTextColor;
-        }
-    }
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+            -webkit-appearance: none;
+            background-image: none;
+            box-sizing: border-box;
+            border: none;
+            color: getThemeValue(bpInputTextColor);
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            outline: none;
+            padding: 0 15px;
+            transition: background-color .2s cubic-bezier(.645, .045, .355, 1);
+            flex-grow: 1;
+            width: 100%;
+            background-color: getThemeValue(bpInputBgColor);
 
-
-    &.bp-input__warn {
-
-        textarea,
-        input {
-            background-color: rgba(255,59,48,.2);
-            // color: $bpInputTextWarnColor;
+            &:focus {
+                outline: none;
+            }
         }
 
         &.bp-input__focus {
+            border-color: getThemeValue(bpInputFocusBorderColor);
+            background: getThemeValue(bpInputFocusBgColor) !important;
+
+            .bp-input__inner {
+                background: getThemeValue(bpInputFocusBgColor) !important;
+                color: getThemeValue(bpInputFocusTextColor);
+            }
+        }
+
+
+        &.bp-input__warn {
+
             textarea,
             input {
-                // color: $bpInputFocusTextWarnColor;
-            }
-        }
-
-        .bp-input__warnIcon {
-            position: absolute;
-            right: 5px;
-            top: 8.5px;
-        }
-
-        border-color: $bpInputTextWarnColor;
-    }
-
-    .bp-input_clearIcon {
-        cursor: pointer;
-        height: 30px;
-        width: 30px;
-        display: flex;
-        flex-shrink: 0;
-        justify-content: center;
-        align-items: center;
-
-        div {
-            height: 16px;
-            width: 16px;
-            min-height: 16px;
-            min-width: 16px;
-            max-height: 16px;
-            max-width: 16px;
-            border-radius: 50%;
-            background: #b7b7b7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-shrink: 0;
-            box-sizing: content-box;
-
-            i {
-                height: 14px;
-                width: 14px;
-                font-size: 14px;
-                color: #ffffff;
-                transform-origin: center;
-                transform: scale(0.5);
+                background-color: rgba(255,59,48,.2);
+                // color: $bpInputTextWarnColor;
             }
 
-        }
-    }
+            &.bp-input__focus {
+                textarea,
+                input {
+                    // color: $bpInputFocusTextWarnColor;
+                }
+            }
 
-    &.bp-input__textarea {
-        padding-right: initial;
-        background: transparent;
-        position: relative;
-        display: flex;
-        align-items: center;
-        vertical-align: bottom;
+            .bp-input__warnIcon {
+                position: absolute;
+                right: 5px;
+                top: 8.5px;
+            }
+
+            border-color: getThemeValue(bpInputTextWarnColor);
+        }
 
         .bp-input_clearIcon {
-            align-self: flex-start;
+            cursor: pointer;
+            height: 30px;
+            width: 30px;
+            display: flex;
+            flex-shrink: 0;
+            justify-content: center;
+            align-items: center;
+
+            div {
+                height: 16px;
+                width: 16px;
+                min-height: 16px;
+                min-width: 16px;
+                max-height: 16px;
+                max-width: 16px;
+                border-radius: 50%;
+                background: getThemeValue(bpInputClearBtnColor);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-shrink: 0;
+                box-sizing: content-box;
+
+                i {
+                    height: 14px;
+                    width: 14px;
+                    font-size: 14px;
+                    color: #ffffff;
+                    transform-origin: center;
+                    transform: scale(0.5);
+                }
+
+            }
         }
 
-        .bp-input__inner {
-            display: block;
-            resize: vertical;
-            padding: 5px 15px;
-            line-height: 1.5;
-            height: auto;
+        &.bp-input__textarea {
+            padding-right: initial;
+            background: transparent;
+            position: relative;
+            display: flex;
+            align-items: center;
+            vertical-align: bottom;
+
+            .bp-input_clearIcon {
+                align-self: flex-start;
+            }
+
+            .bp-input__inner {
+                display: block;
+                resize: vertical;
+                padding: 5px 15px;
+                line-height: 1.5;
+                height: auto;
+            }
         }
-    }
 
-    .bp-input__counter {
-        text-align: right;
-        position: absolute;
-        bottom: 5px;
-        right: 5px;
-        color: #adadad;
-        font-size: 0.9rem;
-    }
+        .bp-input__counter {
+            text-align: right;
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            color: #adadad;
+            font-size: 0.9rem;
+        }
 
-    // disabled
-    &.bp-input__disabled {
-        opacity: .5;
-        cursor: not-allowed;
-        touch-action: none;
-        pointer-events: none;
-    }
+        // disabled
+        &.bp-input__disabled {
+            opacity: .5;
+            cursor: not-allowed;
+            touch-action: none;
+            pointer-events: none;
+        }
 
-    &[large] {
-        .bp-input__inner {
-            height: 38px;
-            line-height: 38px;
+        &[large] {
+            .bp-input__inner {
+                height: 38px;
+                line-height: 38px;
+            }
         }
     }
 }

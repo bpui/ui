@@ -1,0 +1,39 @@
+@import '../../../../theme';
+
+// 主题变量 color
+$uiSelectThemes: (
+  light:(
+    /* 颜色 */
+    bpSelectBgColor: #dcdcdc,
+    bpSelectBorderColor: #dcdfe6,
+    bpSelectTextColor: map-get(map-get($themes, light), text),
+    bpSelectFocusBgColor: #ffffff,
+    bpSelectFocusBorderColor: map-get(map-get($themes, light), primary),
+    bpSelectFocusTextColor: #424242,
+    bpSelectMultiBgColor: #f3f3f3,
+    /* 附加文本 */
+    bpSelectAdditionLabelColor: #7b7b7b,
+    bpSelectDropdownBorderColor: rgb(224, 224, 224),
+    bpSelectDropdownBgColor: #fff,
+    bpSelectDropdownHoverBgColor: #f5f7fa,
+    bpSelectDropdownTextColor: #353535,
+    bpSelectDropdownActiveColor: map-get(map-get($themes, light), primary),
+  ),
+  dark: (
+    /* 颜色 */
+    bpSelectBgColor: #373737,
+    bpSelectBorderColor: #525252,
+    bpSelectTextColor: map-get(map-get($themes, dark), text),
+    bpSelectFocusBgColor: #535353,
+    bpSelectFocusBorderColor: map-get(map-get($themes, dark), primary),
+    bpSelectFocusTextColor: lighten(map-get(map-get($themes, dark), text), 20%),
+    bpSelectMultiBgColor: #282828,
+    /* 附加文本 */
+    bpSelectAdditionLabelColor: #7b7b7b,
+    bpSelectDropdownBorderColor: #404040,
+    bpSelectDropdownBgColor: #373737,
+    bpSelectDropdownHoverBgColor: #525252,
+    bpSelectDropdownTextColor: map-get(map-get($themes, dark), text),
+    bpSelectDropdownActiveColor: map-get(map-get($themes, dark), primary),
+  )
+)

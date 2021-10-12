@@ -1,0 +1,21 @@
+@import '../../../../theme';
+
+// 主题变量 color
+$uiTableViewThemes: (
+  light:(
+    bpTableViewTitleColor: #999,
+    bpTableViewCellBgColor: rgb(255, 255, 255),
+    bpTableViewCellFontColor: rgb(0, 0, 0),
+    bpTableViewCellRightFontColor: #999,
+    bpTableViewCellBorderColor: #e5e5e5,
+    bpTableViewCellNextArrowColor: #a2a2a2,
+  ),
+  dark: (
+    bpTableViewTitleColor: map-get(map-get($themes, dark), title),
+    bpTableViewCellBgColor: #373737,
+    bpTableViewCellFontColor: map-get(map-get($themes, dark), text),
+    bpTableViewCellRightFontColor: #606060,
+    bpTableViewCellBorderColor: #404040,
+    bpTableViewCellNextArrowColor: #7b7b7b,
+  )
+)
