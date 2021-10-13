@@ -54,7 +54,7 @@ declare namespace ui {
        * @param err_msg: 使用err_msg来代替服务器的错误消息.
        * @return: 如果正确将返回data, 否则返回null.
        */
-      onErrorHandler(data: any): any;
+      onErrorHandler(data: any, url: string): any;
 
       /**
        * 显示loading.

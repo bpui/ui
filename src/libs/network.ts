@@ -32,8 +32,8 @@ export function setNetworkHandler(handler: /*bp.network.INetworkHandler*/any): v
  */
 
 function _getEncodeURIComponent(url: string, params: any): string {
-  url = encodeURIComponent(url);
-  if (params) {
+  url = encodeURI(url);
+  if (params && Object.keys(params).length > 0) {
     if (url.indexOf('?') < 0) {
       url += '?';
     }
@@ -54,7 +54,7 @@ function _net(url: string, option: /*bp.network.FetchOption*/any): Promise<any> 
   }
 
   let uriLower = url.toLowerCase();
-  if (uriLower.indexOf('https://') != 0 && uriLower.indexOf('http://') != 0) {
+  if (uriLower.indexOf('https://') == 0 && uriLower.indexOf('http://') == 0) {
     uriLower = url;
   }
   else {
@@ -113,7 +113,7 @@ function _net(url: string, option: /*bp.network.FetchOption*/any): Promise<any> 
       }
     })
     .then((res: any) => {
-      return handler.onErrorHandler(res);
+      return handler.onErrorHandler(res, url);
     })
     .catch((err: any) => {
       console.log('network is error')

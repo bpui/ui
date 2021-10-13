@@ -250,7 +250,7 @@ function build(pkg) {
         .then((bundle) => bundleEsm(bundle, true))
     )
 
-    // // umd (iife)
+    // umd (iife)
     // p.push(build().then(bundle => bundleUmd(bundle, false))
     //         .then(bundle => bundleCjs(bundle, false))
     //         .then(bundle => bundleEsm(bundle, false)));
