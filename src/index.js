@@ -19,62 +19,20 @@ export * from './dialog';
 export * from './layout';
 
 // bpui plugin.
-
-import bpLibs from '@bpui/libs';
-import bpActionsheet from '@bpui/actionsheet';
-import bpCheckbox from '@bpui/checkbox';
-import bpDialog from '@bpui/dialog';
-import bpInput from '@bpui/input';
-import bpNavbarView from '@bpui/navbar-view';
-import bpPicker from '@bpui/picker';
-import bpPopover from '@bpui/popover';
-import bpRadio from '@bpui/radio';
-import bpSelect from '@bpui/select';
-import bpSwitch from '@bpui/switch';
-import bpTabbar from '@bpui/tabbar';
-import bpTableView from '@bpui/table-view';
-import bpUploader from '@bpui/uploader';
+import "bpui.js";
+import bpui_static from './static';
 
 // import '../fonts/noto-sans-sc/fout.js';
 
-const INIT_KEY = '$$uiSysInited';
-
-const loadComponents = [
-  bpLibs,
-  bpActionsheet,
-  bpCheckbox,
-  bpDialog,
-  bpInput,
-  bpNavbarView,
-  bpPicker,
-  bpPopover,
-  bpRadio,
-  bpSelect,
-  bpSwitch,
-  bpTabbar,
-  bpTableView,
-  bpUploader
-];
+const INIT_KEY = '$$$uiSysInited';
 
 function init() {
   if (window[INIT_KEY]) {
     return;
   }
   window[INIT_KEY] = true;
-
-  // bpui.
-  for (let i = 0; i < loadComponents.length; i++) {
-    let _de = loadComponents[i];
-    if (_de) {
-      if (typeof _de.init === 'function') {
-        _de.init();
-      }
-      if (typeof _de.VuePlugin === 'function') {
-        Vue.use(_de.VuePlugin());
-      }
-    }
-  }
-
+  
+  bpui_static();
   // plugin.
   Vue.use(plugin());
 }

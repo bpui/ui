@@ -3,6 +3,7 @@ const fs = require('fs')
 const febs = require('febs')
 const rollup = require('rollup')
 
+const rollupJson = require('@rollup/plugin-json')
 const rollupTypescript = require('@rollup/plugin-typescript')
 const rollupTypescript2 = require('rollup-plugin-typescript2')
 const rollupResolve = require('@rollup/plugin-node-resolve')
@@ -123,6 +124,7 @@ function build(pkg) {
       browser: true,
     }),
     rollupCommonjs({}),
+    rollupJson({compact:true}),
     // vueJsx({
     //   jsxFactory: "vueJsxCompat",
     // }),
