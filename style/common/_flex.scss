@@ -39,7 +39,7 @@
     justify-content: center;
 }
 
-.flex_r_l {
+.flex_r_s {
     -js-display: flex;
     display: -webkit-box;
     display: -webkit-flex;
@@ -53,7 +53,7 @@
     align-items: center;
 }
 
-.flex_r_r {
+.flex_r_e {
     -js-display: flex;
     display: -webkit-box;
     display: -webkit-flex;
@@ -125,7 +125,7 @@
     justify-content: center;
 }
 
-.flex_c_t {
+.flex_c_s {
     -js-display: flex;
     display: -webkit-box;
     display: -webkit-flex;
@@ -151,7 +151,7 @@
     justify-content: flex-start;
 }
 
-.flex_c_b {
+.flex_c_e {
     -js-display: flex;
     display: -webkit-box;
     display: -webkit-flex;
