@@ -41,48 +41,44 @@
 
   // App Code, don’t bother with the subset font here.
   var fonts = [{
-    font: "PingFangSC",
+    font: "Noto Sans SC",
+    weight: 100,
+  }, {
+    font: "Noto Sans SC",
     weight: 300,
   }, {
-    font: "PingFangSC",
+    font: "Noto Sans SC",
     weight: 400,
   }, {
-    font: "PingFangSC",
+    font: "Noto Sans SC",
     weight: 500,
   }, {
-    font: "PingFangSC",
-    weight: 600,
+    font: "Noto Sans SC",
+    weight: 700,
     }];
+
+  var fontsed = [];
 
   if (sessionStorage.fontsLoaded == 'true') {
     document.documentElement.className += " fonts-loaded";
     return;
   } else if ("fonts" in document) {
-    Promise.all([
-      document.fonts.load(`${fonts[0].weight} 1em ${fonts[0].font}`),
-      document.fonts.load(`${fonts[1].weight} 1em ${fonts[1].font}`),
-      document.fonts.load(`${fonts[2].weight} 1em ${fonts[2].font}`),
-      document.fonts.load(`${fonts[3].weight} 1em ${fonts[3].font}`),
-    ]).then(function () {
+    for (var i = 0; i < fonts.length; i++) {
+      fontsed.push(document.fonts.load(`${fonts[i].weight} 1em ${fonts[i].font}`));
+    }
+    Promise.all(fontsed).then(function () {
       document.documentElement.className += " fonts-loaded";
       sessionStorage.fontsLoaded = true;
     });
   }
   else {
-    var fontD = new window.FontFaceObserver(fonts[0].font, {
-      weight: fonts[0].weight
-    });
-    var fontE = new window.FontFaceObserver(fonts[1].font, {
-      weight: fonts[1].weight
-    });
-    var fontF = new window.FontFaceObserver(fonts[2].font, {
-      weight: fonts[2].weight
-    });
-    var fontG = new window.FontFaceObserver(fonts[3].font, {
-      weight: fonts[3].weight
-    });
+    for (var i = 0; i < fonts.length; i++) {
+      fontsed.push(new window.FontFaceObserver(fonts[i].font, {
+        weight: fonts[i].weight
+      }));
+    }
 
-    Promise.all([fontD.load(), fontE.load(), fontF.load(), fontG.load()]).then(function () {
+    Promise.all(fontsed).then(function () {
       document.documentElement.className += " fonts-loaded";
 
       // Optimization for Repeat Views

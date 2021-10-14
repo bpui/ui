@@ -284,7 +284,7 @@ injectGlobal`
     overflow: auto;
     table {
       border: none;
-      font-family: "PingFang SC";
+      font-family: "Noto Sans SC";
       font-size: 14px;
       table-layout: fixed;
       border-collapse: separate;

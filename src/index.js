@@ -35,7 +35,7 @@ import bpTabbar from '@bpui/tabbar';
 import bpTableView from '@bpui/table-view';
 import bpUploader from '@bpui/uploader';
 
-// import '../fonts/PingFangSC/font-method-FOUT.js';
+// import '../fonts/noto-sans-sc/fout.js';
 
 const INIT_KEY = '$$uiSysInited';
 

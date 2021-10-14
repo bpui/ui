@@ -47,6 +47,8 @@ button,
     padding: 6px 8px;
     height: 32px;
     line-height: 32px;
+    font-size: $bpButtonFontSize;
+    border-radius: $bpButtonBorderRadius;
 
     svg, .bp-icon {
         vertical-align: middle;
@@ -85,12 +87,6 @@ button,
  *  theme
  *********************************************/
 @include ui-themeify($uiButtonThemes) {
-    button,
-    .bp-btn,
-    .ui-btn {
-      font-size: $bpButtonFontSize;
-      border-radius: $bpButtonBorderRadius;
-    }
 
     /** default */
     button,
