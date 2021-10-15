@@ -127,6 +127,11 @@ function setup() {
       return defaultK || k;
     }
     else {
+      if (!k) {
+        console.warn('$i18n() key is null');
+        return defaultK || '';
+      }
+
       let messages = i18;
       let ks = k.split('.');
       for (let i = 0; i < ks.length; i++) {
