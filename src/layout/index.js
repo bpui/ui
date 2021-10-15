@@ -5,6 +5,7 @@ import * as febs from 'febs-browser';
 import bpNavbarView from '@bpui/navbar-view';
 import * as tableview from './tableview';
 import * as table from './table';
+import * as row_col from './row_col';
 
 // global component.
 function injectGlobal() {
@@ -28,6 +29,9 @@ function injectGlobal() {
   Vue.component('ui-tr', table.UITr);
   Vue.component('ui-th', table.UITh);
   Vue.component('ui-td', table.UITd);
+
+  Vue.component('ui-row', row_col.UIRow);
+  Vue.component('ui-col', row_col.UICol);
 
   injectGlobal.installed = true;
 }
