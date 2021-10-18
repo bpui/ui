@@ -4,5 +4,9 @@
         color: getThemeValue(title);
         font-weight: 500;
       }
+
+      td {
+        color: getThemeValue(text);
+      }
   }
 }
