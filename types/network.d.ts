@@ -22,7 +22,7 @@ declare namespace ui {
       /**
        * @desc 接收到服务器反馈消息后, 先进行一次原始数据的处理并将处理后的结果返回.
        */
-      rawHandle?: (serverData: any) => any,
+      rawHandle?: (serverData: Response) => Response,
       /**
        * @desc 不触发遮罩层，默认有遮罩层.
        */

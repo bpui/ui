@@ -247,8 +247,8 @@ const UIThProps = {
 export const UITh = styled(_UITh, UIThProps)`
   width: ${props=>props.width||'120px'};
   color: ${props => props.color};
-  text-align: ${props => props.align};
-  vertical-align: ${props => props.vertical};
+  text-align: ${props => props.align||'left'};
+  vertical-align: ${props => props.vertical || 'middle'};
 `;
 
 const _UITd = {

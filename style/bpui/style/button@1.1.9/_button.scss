@@ -161,7 +161,8 @@ button,
             }
 
             &.bp-btnPlain,
-            &.ui-btnPlain {
+            &.ui-btnPlain,
+            &[plain] {
                 font-weight: map-get(map-get(getThemeValue(bpButtonPlains), Primary), fontWeight);
                 color: map-get(map-get(getThemeValue(bpButtonPlains), Primary), color);
                 border: map-get(map-get(getThemeValue(bpButtonPlains), Primary), borderColor);
@@ -175,7 +176,8 @@ button,
             }
 
             &.bp-btnBorder,
-            &.ui-btnBorder {
+            &.ui-btnBorder,
+            &[border] {
                 font-weight: map-get(map-get(getThemeValue(bpButtonBorders), Primary), fontWeight);
                 color: map-get(map-get(getThemeValue(bpButtonBorders), Primary), color);
                 border: map-get(map-get(getThemeValue(bpButtonBorders), Primary), borderColor);
@@ -219,7 +221,8 @@ button,
             }
 
             &.bp-btnPlain,
-            &.ui-btnPlain {
+            &.ui-btnPlain,
+            &[plain] {
                 font-weight: map-get(map-get(getThemeValue(bpButtonPlains), Warning), fontWeight);
                 color: map-get(map-get(getThemeValue(bpButtonPlains), Warning), color);
                 border: map-get(map-get(getThemeValue(bpButtonPlains), Warning), borderColor);
@@ -233,7 +236,8 @@ button,
             }
 
             &.bp-btnBorder,
-            &.ui-btnBorder {
+            &.ui-btnBorder,
+            &[border] {
                 font-weight: map-get(map-get(getThemeValue(bpButtonBorders), Warning), fontWeight);
                 color: map-get(map-get(getThemeValue(bpButtonBorders), Warning), color);
                 border: map-get(map-get(getThemeValue(bpButtonBorders), Warning), borderColor);
@@ -277,7 +281,8 @@ button,
             }
 
             &.bp-btnPlain,
-            &.ui-btnPlain {
+            &.ui-btnPlain,
+            &[plain] {
                 font-weight: map-get(map-get(getThemeValue(bpButtonPlains), Info), fontWeight);
                 color: map-get(map-get(getThemeValue(bpButtonPlains), Info), color);
                 border: map-get(map-get(getThemeValue(bpButtonPlains), Info), borderColor);
@@ -291,7 +296,8 @@ button,
             }
 
             &.bp-btnBorder,
-            &.ui-btnBorder {
+            &.ui-btnBorder,
+            &[border] {
                 font-weight: map-get(map-get(getThemeValue(bpButtonBorders), Info), fontWeight);
                 color: map-get(map-get(getThemeValue(bpButtonBorders), Info), color);
                 border: map-get(map-get(getThemeValue(bpButtonBorders), Info), borderColor);

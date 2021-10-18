@@ -15,6 +15,7 @@ export * from './picker-date.d';
 export * from './select.d';
 export * from './dialog.d';
 export * from './popover.d';
+export * from './uploader.d';
 
 type LocaleMessage = string | LocaleMessageObject;
 interface LocaleMessageObject { [key: string]: LocaleMessage; }

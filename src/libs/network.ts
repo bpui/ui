@@ -158,7 +158,7 @@ function post(url: string, body: any, option?: /*bp.network.FetchOption*/any): P
 function put(url: string, body: any, option?: /*bp.network.FetchOption*/any): Promise<any> {
   let uri = _getEncodeURIComponent(url, null);
   return _net(uri, febs.utils.mergeMap(option, {
-    method: 'post',
+    method: 'put',
     body: body,
   }));
 }
@@ -169,10 +169,9 @@ function put(url: string, body: any, option?: /*bp.network.FetchOption*/any): Pr
  * @return: Promise
  */
 function deleteFoo(url: string, body: any, option?: /*bp.network.FetchOption*/any): Promise<any> {
-  let uri = _getEncodeURIComponent(url, null);
+  let uri = _getEncodeURIComponent(url, body);
   return _net(uri, febs.utils.mergeMap(option, {
     method: 'delete',
-    body: body,
   }));
 }
 
