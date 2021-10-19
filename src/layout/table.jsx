@@ -309,7 +309,7 @@ injectGlobal`
     }
 
     th {
-      font-weight: 700;
+      font-weight: 500;
       user-select: none;
     }
 
@@ -357,16 +357,19 @@ injectGlobal`
       
       tr {
         background: #fff;
+        &:hover {
+          background-color: #f5f7fa;
+        }
       }
 
       th, td {
         border-bottom: 1px solid #e8e8e8;
       }
 
-      tbody {
+      thead, tfoot {
         tr {
           &:hover {
-            background-color: #f5f7fa;
+            background-color: #fff;
           }
         }
       }
@@ -417,16 +420,19 @@ injectGlobal`
       
       tr {
         background: #373737;
+        &:hover {
+          background-color: #424242;
+        }
       }
 
       th, td {
         border-bottom: 1px solid #2A282C;
       }
 
-      tbody {
+      thead, tfoot {
         tr {
           &:hover {
-            background-color: #424242;
+            background-color: #373737;
           }
         }
       }
