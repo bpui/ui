@@ -11,4 +11,4 @@ import bpui from '@bpui/dialog';
 
 export const UIDialog = bpui.bpDialog;
 
-export const UIDialogRightTop = bpui.apiWidget.rightTop;
+export const dialogRightTop = bpui.apiWidget.rightTop;

@@ -8,6 +8,7 @@ import * as popover from './popover';
 export * from './actionsheet';
 export * from './popover';
 export * from './dialog';
+export * from './dialogMixin';
 
 // global component.
 function injectGlobal() {

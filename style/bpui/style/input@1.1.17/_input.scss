@@ -119,6 +119,10 @@
             }
         }
 
+        textarea,
+        input {
+            font-family: $bpFont;
+        }
 
         &.bp-input__warn {
 
