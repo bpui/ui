@@ -54,7 +54,7 @@ function _net(url: string, option: /*bp.network.FetchOption*/any): Promise<any> 
   }
 
   let uriLower = url.toLowerCase();
-  if (uriLower.indexOf('https://') == 0 && uriLower.indexOf('http://') == 0) {
+  if (uriLower.indexOf('https://') == 0 || uriLower.indexOf('http://') == 0) {
     uriLower = url;
   }
   else {
