@@ -61,6 +61,19 @@ function _net(url: string, option: /*bp.network.FetchOption*/any): Promise<any> 
     uriLower = urlUtils.join(handler.requestHost, url);
   }
 
+  let defaultQueryParam = handler.defaultQueryParam;
+  if (defaultQueryParam && Object.keys(defaultQueryParam).length > 0) {
+    if (url.indexOf('?') > 0) {
+      if (url[url.length - 1] != '?' && url[url.length - 1] != '&') {
+        url += '&';
+      }
+    } else {
+      url += '?';
+    }
+
+    url += qs.stringify(defaultQueryParam);
+  }
+
   // set options.
   let defaultOption = febs.utils.mergeMap(handler.defaultRequestOption);
   if (!defaultOption.hasOwnProperty('mode')) {

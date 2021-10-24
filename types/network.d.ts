@@ -48,6 +48,10 @@ declare namespace ui {
        * @desc 默认的请求选项.
        */
       readonly defaultRequestOption: FetchOptionBase;
+      /**
+       * @desc 默认的查询参数.
+       */
+      readonly defaultQueryParam: bp.Directory<any>;
       
       /**
        * @desc 接收到服务器反馈消息后, 先进行一次原始数据的处理并将处理后的结果返回.
