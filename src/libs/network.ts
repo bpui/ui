@@ -63,15 +63,15 @@ function _net(url: string, option: /*bp.network.FetchOption*/any): Promise<any> 
 
   let defaultQueryParam = handler.defaultQueryParam;
   if (defaultQueryParam && Object.keys(defaultQueryParam).length > 0) {
-    if (url.indexOf('?') > 0) {
-      if (url[url.length - 1] != '?' && url[url.length - 1] != '&') {
-        url += '&';
+    if (uriLower.indexOf('?') > 0) {
+      if (uriLower[uriLower.length - 1] != '?' && uriLower[uriLower.length - 1] != '&') {
+        uriLower += '&';
       }
     } else {
-      url += '?';
+      uriLower += '?';
     }
 
-    url += qs.stringify(defaultQueryParam);
+    uriLower += qs.stringify(defaultQueryParam);
   }
 
   // set options.
