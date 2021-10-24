@@ -95,8 +95,10 @@ function _net(url: string, option: /*bp.network.FetchOption*/any): Promise<any> 
       defaultOption
     )
     .then((res: any) => {
+      handler.onRawHandler(res, url);
+
       if (option.rawHandle) {
-        return option.rawHandle(res)
+        option.rawHandle(res, url)
       }
       return res
     })

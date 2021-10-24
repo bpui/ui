@@ -22,7 +22,7 @@ declare namespace ui {
       /**
        * @desc 接收到服务器反馈消息后, 先进行一次原始数据的处理并将处理后的结果返回.
        */
-      rawHandle?: (serverData: Response) => Response,
+      rawHandle?: (serverData: Response, url?: string) => void,
       /**
        * @desc 不触发遮罩层，默认有遮罩层.
        */
@@ -48,6 +48,11 @@ declare namespace ui {
        * @desc 默认的请求选项.
        */
       readonly defaultRequestOption: FetchOptionBase;
+      
+      /**
+       * @desc 接收到服务器反馈消息后, 先进行一次原始数据的处理并将处理后的结果返回.
+       */
+      onRawHandler(serverData: Response, url: string): void;
       /**
        * @desc: 处理api错误.
        * @param data: 服务器返回的消息.
