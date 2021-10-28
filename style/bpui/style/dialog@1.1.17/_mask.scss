@@ -53,9 +53,9 @@
     align-items: center;
     opacity: 1 !important;
     visibility: visible !important;
-    -webkit-transition: opacity $bpDialogAnimateDurtion 0s, visibility 0s 0s, background-color $bpDialogAnimateDurtion 0s;
-    -moz-transition: opacity $bpDialogAnimateDurtion 0s, visibility 0s 0s, background-color $bpDialogAnimateDurtion 0s;
-    transition: opacity $bpDialogAnimateDurtion 0s, visibility 0s 0s, background-color $bpDialogAnimateDurtion 0s; 
+    -webkit-transition: opacity $bpDialogAnimateDurtion 0.1s, visibility 0.1s 0.1s, background-color $bpDialogAnimateDurtion 0.1s;
+    -moz-transition: opacity $bpDialogAnimateDurtion 0.1s, visibility 0.1s 0.1s, background-color $bpDialogAnimateDurtion 0.1s;
+    transition: opacity $bpDialogAnimateDurtion 0.1s, visibility 0.1s 0.1s, background-color $bpDialogAnimateDurtion 0.1s; 
   }
 
   &.bp-widget__invisible {
@@ -64,9 +64,9 @@
     align-items: center;
     opacity: 0 !important;
     visibility: hidden !important;
-    -webkit-transition: opacity $bpDialogAnimateDurtion 0s, visibility $bpDialogAnimateDurtion 0s, background-color $bpDialogAnimateDurtion 0s;
-    -moz-transition: opacity $bpDialogAnimateDurtion 0s, visibility $bpDialogAnimateDurtion 0s, background-color $bpDialogAnimateDurtion 0s;
-    transition: opacity $bpDialogAnimateDurtion 0s, visibility $bpDialogAnimateDurtion 0s, background-color $bpDialogAnimateDurtion 0s;
+    -webkit-transition: opacity $bpDialogAnimateDurtion 0.1s, visibility $bpDialogAnimateDurtion 0.1s, background-color $bpDialogAnimateDurtion 0.1s;
+    -moz-transition: opacity $bpDialogAnimateDurtion 0.1s, visibility $bpDialogAnimateDurtion 0.1s, background-color $bpDialogAnimateDurtion 0.1s;
+    transition: opacity $bpDialogAnimateDurtion 0.1s, visibility $bpDialogAnimateDurtion 0.1s, background-color $bpDialogAnimateDurtion 0.1s;
   }
 }
 
@@ -78,10 +78,13 @@
 }
 
 /** 掩码层 */
-.bp-widget__mask {
-  -webkit-backdrop-filter: blur(1px);
-  backdrop-filter: blur(1px);
-  background-color: rgba(0, 0, 0, 0.2);
+
+@include ui-themeify($uiDialogThemes) {
+  .bp-widget__mask {
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    background-color: getThemeValue(bpDialogMask);
+  }
 }
 
 /** 掩码层 */

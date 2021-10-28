@@ -6,169 +6,178 @@
 */
 
 
-.bp-dialog {
-  /* safari polyfill */
-  @include bp-isPhone {
-    position: fixed !important;
-    // height: inherit !important;
-    // touch-action: none !important;
-  }
-
-  &.bp-widget__visible {
-    & > div {
-      top: 0px;
-    }
-  }
-
-  &.bp-widget__invisible {
-    & > div {
-      top: -30px;
-    }
-  }
-
-  .bp-widget__content {
-    -webkit-transition-property: top;
-    -moz-transition-property: top;
-    transition-property: top;
-    -webkit-transition-duration: $bpDialogAnimateDurtion;
-    -moz-transition-duration: $bpDialogAnimateDurtion;
-    transition-duration: $bpDialogAnimateDurtion;
-
-    box-shadow: 0px 0px 2px 1px rgba(165, 165, 165, 0.17);
-    min-width: 200px;
-    max-width: 98vw;
-
-    position: relative;
-    text-align: center;
-
-    font-size: $bpDialogFontSize;
-    border-radius: $bpDialogRadius;
-    background-color: $bpDialogBgColor;
-    color: $bpDialogTextColor;
-    border-radius: 0;
-  }
-
-  .bp-dialog__title {
-    user-select: none;
-    font-size: $bpDialogTitleFontSize;
-    font-weight: $bpDialogTitleFontWeight;
-    padding: 15px 35px 0px 20px;
-    margin-bottom: 10px;
-    text-align: left;
-    color: $bpDialogTitleColor;
-    position: relative;
-    min-height: 26px;
-  }
-
-  .bp-dialog__main {
-    padding: 20px 12px 20px;
-    min-width: 375px;
-    max-width: 99vw;
-    min-height: 150px;
-  }
-
-  .bp-dialog__foot {
-    height: 47px;
-    // @include bp-thinBorderTop($bpBorderColor);
-
-    & > div {
-      height: 100%;
-      width: 100%;
+@include ui-themeify($uiDialogThemes) {
+  .bp-dialog {
+    /* safari polyfill */
+    @include bp-isPhone {
+      position: fixed !important;
+      // height: inherit !important;
+      // touch-action: none !important;
     }
 
-    button {
-      @include bp-ellipsis();
-      // height: 100%;
-      margin: 0;
-      min-width: 70px;
-      height: 30px;
-      border-radius: 3px;
-      margin-right: 6px;
-
-      &:hover {
-        background-color: rgba(234, 234, 234, 0.5);
+    &.bp-widget__visible {
+      & > div {
+        top: 0px;
       }
+    }
 
-      @include bp-thinBorderRight($bpBorderColor);
+    &.bp-widget__invisible {
+      & > div {
+        top: -30px;
+      }
+    }
 
-      &:last-child {
-        @include bp-thinBorderRight(rgba(0,0,0,0));
+    .bp-widget__content {
+      -webkit-transition-property: top;
+      -moz-transition-property: top;
+      transition-property: top;
+      -webkit-transition-duration: $bpDialogAnimateDurtion;
+      -moz-transition-duration: $bpDialogAnimateDurtion;
+      transition-duration: $bpDialogAnimateDurtion;
+
+      box-shadow: 0px 0px 2px 1px getThemeValue(bpDialogShadow);
+      min-width: 200px;
+      max-width: 98vw;
+
+      position: relative;
+      text-align: center;
+
+      font-size: $bpDialogFontSize;
+      border-radius: $bpDialogRadius;
+      background-color: getThemeValue(bpDialogBgColor);
+      color: getThemeValue(bpDialogTextColor);
+      border-radius: 0;
+    }
+
+    .bp-icon {
+      color: getThemeValue(bpLoadingTextColor);
+      i, i:before {
+        color: getThemeValue(bpLoadingTextColor);
       }
     }
     
-    &.bp-dialog__footOneButton {
-      min-width: 280px;
-
-      & > div {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-      }
-
-      button {
-        @extend .bp-btnPrimary;
-        margin-right: 0px;
-      }
+    .bp-dialog__title {
+      user-select: none;
+      font-size: $bpDialogTitleFontSize;
+      font-weight: $bpDialogTitleFontWeight;
+      padding: 15px 35px 0px 20px;
+      margin-bottom: 10px;
+      text-align: left;
+      color: getThemeValue(bpDialogTitleColor);
+      position: relative;
+      min-height: 26px;
     }
-    &.bp-dialog__footTwoButton {
-      min-width: 280px;
+
+    .bp-dialog__main {
+      padding: 20px 12px 20px;
+      min-width: 375px;
+      max-width: 99vw;
+      min-height: 150px;
+    }
+
+    .bp-dialog__foot {
+      height: 47px;
+      // @include bp-thinBorderTop($bpBorderColor);
 
       & > div {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
+        height: 100%;
+        width: 100%;
       }
 
       button {
+        @include bp-ellipsis();
+        // height: 100%;
+        margin: 0;
+        min-width: 70px;
+        height: 30px;
+        border-radius: 3px;
+        margin-right: 6px;
 
-        &:first-child {
-          @extend .bp-btnInfo;
+        &:hover {
+          background-color: rgba(234, 234, 234, 0.5);
         }
 
-        &:last-child {
-          @extend .bp-btnPrimary;
-        }
-      }
-    }
-    &.bp-dialog__footThreeButton {
-      min-width: 280px;
-      
-      & > div {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-      }
-      
-      button {
-        @extend .bp-btnInfo;
+        @include bp-thinBorderRight(getThemeValue(bpBorderColor));
 
         &:last-child {
+          @include bp-thinBorderRight(rgba(0,0,0,0));
+        }
+      }
+      
+      &.bp-dialog__footOneButton {
+        min-width: 280px;
+
+        & > div {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+
+        button {
           @extend .bp-btnPrimary;
           margin-right: 0px;
         }
       }
+      &.bp-dialog__footTwoButton {
+        min-width: 280px;
+
+        & > div {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+        }
+
+        button {
+
+          &:first-child {
+            @extend .bp-btnInfo;
+          }
+
+          &:last-child {
+            @extend .bp-btnPrimary;
+          }
+        }
+      }
+      &.bp-dialog__footThreeButton {
+        min-width: 280px;
+        
+        & > div {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        button {
+          @extend .bp-btnInfo;
+
+          &:last-child {
+            @extend .bp-btnPrimary;
+            margin-right: 0px;
+          }
+        }
+      }
     }
-  }
 
-  .bp-dialog__close {
-    cursor: pointer;
-    position: absolute;
-    top: 14px;
-    right: 10px;
-    height: 18px;
-    width: 18px;
-    font-size: 18px;
-    color: $bpDialogCloseColor;
-  }
+    .bp-dialog__close {
+      cursor: pointer;
+      position: absolute;
+      top: 14px;
+      right: 10px;
+      height: 18px;
+      width: 18px;
+      font-size: 18px;
+      color: getThemeValue(bpDialogCloseColor);
+    }
 
-  &.bp-apiClass {
-    .bp-dialog__main {
-      min-width: initial;
-      max-width: initial;
-      min-height: initial;
+    &.bp-apiClass {
+      .bp-dialog__main {
+        min-width: initial;
+        max-width: initial;
+        min-height: initial;
+      }
     }
   }
 }

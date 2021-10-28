@@ -1,0 +1,29 @@
+@import '../../../../theme';
+
+// 主题变量 color
+$uiDialogThemes: (
+  light:(
+    /* 颜色 */
+    bpDialogMask: rgba(0, 0, 0, 0.2),
+    bpDialogShadow: rgba(165, 165, 165, 0.17),
+    bpDialogBgColor: rgba(255, 255, 255, 0.99),
+    bpDialogTitleColor: map-get(map-get($themes, light), title),
+    bpDialogTextColor: map-get(map-get($themes, light), text),
+    bpDialogCloseColor: #b3b3b3,
+    bpLoadingBgColor: rgba(43, 43, 43, 0.92),
+    bpLoadingTextColor: #d4d4d4,
+    bpLoadingTargetBgColor: rgba(255, 255, 255, 0.12),
+  ),
+  dark: (
+    /* 颜色 */
+    bpDialogMask: rgba(255, 255, 255, 0.1),
+    bpDialogShadow: rgba(16, 27, 79, 0.1),
+    bpDialogBgColor: rgba(40, 43, 47, 0.99),
+    bpDialogTitleColor: map-get(map-get($themes, dark), title),
+    bpDialogTextColor: map-get(map-get($themes, dark), text),
+    bpDialogCloseColor: #6c6c6c,
+    bpLoadingBgColor: rgba(74, 74, 74, 0.92),
+    bpLoadingTextColor: #ffffff,
+    bpLoadingTargetBgColor: rgba(255, 255, 255, 0.12),
+  )
+)

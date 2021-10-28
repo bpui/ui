@@ -27,6 +27,9 @@
  */
 @mixin ui-themeify-by($themeName) {
   html[data-theme="#{$themeName}"] {
+    //!global 把局部变量强升为全局变量
+    $theme-map: map-get($themes, $themeName) !global;
+
     @content;
   }
 }
