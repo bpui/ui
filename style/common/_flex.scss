@@ -1,4 +1,13 @@
 // flex布局常用类
+
+.flex_shrink0 {
+    flex-shrink: 0;
+}
+
+.flex_grow0 {
+    flex-grow: 0;
+}
+
 .flex_r {
     -js-display: flex;
     display: -webkit-box;

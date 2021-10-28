@@ -24,6 +24,13 @@ declare namespace ui {
        */
       rawHandle?: (serverData: Response, url?: string) => void,
       /**
+       * @desc: 使用此方法处理api错误来替代handler中的错误处理方法
+       * @param data: 服务器返回的消息.
+       * @param err_msg: 使用err_msg来代替服务器的错误消息.
+       * @return: 如果正确将返回data, 否则返回null.
+       */
+      errorHandle?: (data: any, url: string) => any,
+      /**
        * @desc 不触发遮罩层，默认有遮罩层.
        */
       noLoading?: boolean,

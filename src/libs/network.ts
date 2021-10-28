@@ -128,7 +128,12 @@ function _net(url: string, option: /*bp.network.FetchOption*/any): Promise<any> 
       }
     })
     .then((res: any) => {
-      return handler.onErrorHandler(res, url);
+      if (option.errorHandle) {
+        return option.errorHandle(res, url);
+      }
+      else {
+        return handler.onErrorHandler(res, url);
+      }
     })
     .catch((err: any) => {
       console.log('network is error')
