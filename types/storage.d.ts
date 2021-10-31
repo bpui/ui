@@ -101,12 +101,12 @@ declare namespace ui {
     /**
      * @desc: 通用命名空间获取一个新的store.
      */
-    function namespace(name: string): IStorage;
+    function namespace(name?: string): IStorage;
 
     /**
      * @desc: 使用session方式存储.
      */
-    function namespace_session(name: string): IStorage;
+    function namespace_session(name?: string): IStorage;
 
     /**
      * @desc 获得cookies.
