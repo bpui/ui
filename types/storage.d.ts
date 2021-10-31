@@ -16,13 +16,13 @@ declare namespace ui {
       * @desc: 设置信息.
       * @param data: 如果不存在, 则进行删除key操作.
       */
-      set(key: string, data?: string): IStorage;
+      set(key: string, data?: any): IStorage;
 
       /**
       * @desc: 获取信息.
       * @param alt: 如果获取不到信息, 使用此数据返回.
       */
-      get(key: string, alt?: any): string;
+      get(key: string, alt?: any): any;
 
       /**
       * @desc: 移除信息.

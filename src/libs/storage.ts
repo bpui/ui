@@ -26,15 +26,16 @@ class Store {
   /**
    * @desc: 设置信息.
    */
-  set(key: string, data: string) {
+  set(key: string, data: any) {
     if (!data) {
       return this.remove(key)
     }
 
-    if (febs.string.isEmpty(data)) {
+    if (!(data)) {
       return this.remove(key)
     }
 
+    data = JSON.stringify(data);
     data = febs.crypt.base64_encode(data)
 
     this.s.set(key, data, true)
@@ -54,6 +55,13 @@ class Store {
     if (r) {
       r = febs.crypt.base64_decode(r)
       r = febs.string.bytesToUtf8(r || [])
+
+      try {
+        return JSON.parse(r);
+      } catch (e) {
+        this.remove(key);
+        return null;
+      }
     }
     return r
   }
@@ -79,15 +87,15 @@ export const storage = {
   /**
    * @desc: 通用命名空间获取一个新的store.
    */
-  namespace: function(nm: string) {
-    return new Store(store.namespace(nm))
+  namespace: function(nm?: string) {
+    return new Store(store.namespace(nm||"default"))
   },
 
   /**
    * @desc: 使用session方式存储.
    */
-  namespace_session: function(nm: string) {
-    return new Store(store.session.namespace(nm))
+  namespace_session: function(nm?: string) {
+    return new Store(store.session.namespace(nm||"default"))
   },
 
   cookies: {
