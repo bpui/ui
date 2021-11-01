@@ -59,6 +59,11 @@ declare namespace ui {
        * @desc 默认的查询参数.
        */
       readonly defaultQueryParam: bp.Directory<any>;
+
+      /**
+       * @desc 用于构造请求url; 如果返回null, 则使用内部默认的方法进行构造.
+       */
+      onGetEncodeURIComponent(url: string, body: any): string;
       
       /**
        * @desc 接收到服务器反馈消息后, 先进行一次原始数据的处理并将处理后的结果返回.

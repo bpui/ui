@@ -32,6 +32,12 @@ export function setNetworkHandler(handler: /*bp.network.INetworkHandler*/any): v
  */
 
 function _getEncodeURIComponent(url: string, params: any): string {
+  let handler = getNetworkHandler();
+  let str = handler.onGetEncodeURIComponent(url, params);
+  if (str) {
+    return str;
+  }
+  
   url = encodeURI(url);
   if (params && Object.keys(params).length > 0) {
     if (url.indexOf('?') < 0) {
