@@ -102,6 +102,12 @@ function _net(url: string, option: /*bp.network.FetchOption*/any): Promise<any> 
   if (option.hasOwnProperty('contentType')) {
     defaultOption.contentType = option.contentType;
   }
+  if (option.hasOwnProperty('method')) {
+    defaultOption.method = option.method;
+  }
+  if (option.hasOwnProperty('body')) {
+    defaultOption.body = option.body;
+  }
   //defaultOption = febs.utils.mergeMap(defaultOption, option);
   
   if (defaultOption.body && typeof defaultOption.body !== 'string') {
