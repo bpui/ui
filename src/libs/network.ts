@@ -88,8 +88,22 @@ function _net(url: string, option: /*bp.network.FetchOption*/any): Promise<any> 
   if (!defaultOption.hasOwnProperty('timeout')) {
     defaultOption.timeout = DefaultTimeout;
   }
-  defaultOption = febs.utils.mergeMap(defaultOption, option);
 
+  defaultOption.headers = febs.utils.mergeMap(defaultOption.headers, option.headers);
+  if (option.hasOwnProperty('timeout')) {
+    defaultOption.timeout = option.timeout;
+  }
+  if (option.hasOwnProperty('mode')) {
+    defaultOption.mode = option.mode;
+  }
+  if (option.hasOwnProperty('credentials')) {
+    defaultOption.credentials = option.credentials;
+  }
+  if (option.hasOwnProperty('contentType')) {
+    defaultOption.contentType = option.contentType;
+  }
+  //defaultOption = febs.utils.mergeMap(defaultOption, option);
+  
   if (defaultOption.body && typeof defaultOption.body !== 'string') {
     if (defaultOption.contentType == 'formData') {
       defaultOption.body = qs.stringify(defaultOption.body);
