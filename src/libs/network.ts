@@ -110,19 +110,24 @@ function _net(url: string, option: /*bp.network.FetchOption*/any): Promise<any> 
   }
   //defaultOption = febs.utils.mergeMap(defaultOption, option);
   
-  if (defaultOption.body && typeof defaultOption.body !== 'string') {
+  if (defaultOption.body) {
+    let isString = typeof defaultOption.body === 'string';
+    // if (typeof defaultOption.body !== 'string') {
     if (defaultOption.contentType == 'formData') {
-      defaultOption.body = qs.stringify(defaultOption.body);
+      defaultOption.body = isString ? defaultOption.body : qs.stringify(defaultOption.body);
       defaultOption.headers = defaultOption.headers || {};
       defaultOption.headers['Content-Type'] = 'application/x-www-form-urlencoded';
     }
     else if (defaultOption.contentType == 'textPlain') {
+      if (!isString) {
+        throw new Error("text/plain body must be string");
+      }
       defaultOption.body = defaultOption.body;
       defaultOption.headers = defaultOption.headers || {};
       defaultOption.headers["Content-Type"] = "text/plain";
     }
     else {
-      defaultOption.body = JSON.stringify(defaultOption.body);
+      defaultOption.body = isString ? defaultOption.body : JSON.stringify(defaultOption.body);
       defaultOption.headers = defaultOption.headers || {};
       defaultOption.headers['Content-Type'] = 'application/json';
     }
