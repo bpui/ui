@@ -141,7 +141,7 @@ const _UISelectPicker = {
               this.pickerVisible = false
             },
           }}
-          datasource={this.datasource}
+          datasource={this.datasource||[]}
         >{this.$slots.default}</uix-picker>
       </div>
     )
