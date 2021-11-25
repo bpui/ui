@@ -149,9 +149,9 @@ const _UISelectPicker = {
   methods: {
     _renderLabel() {
       let slots = []
-      let picker = this.$refs.picker
+      let picker = this.$refs.picker;
 
-      if (!this.valuePicker || this.valuePicker.length == 0) {
+      if (!picker || !this.valuePicker || this.valuePicker.length == 0) {
         return (
           <span class="bp-select__mainContain_placeholder">
             {this.placeholderText || ''}
