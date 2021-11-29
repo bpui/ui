@@ -6,27 +6,21 @@
 /// <reference types="@bpui/libs" />
 /// <reference types="@bpui/navbar-view" />
 
-import * as febs from 'febs-browser';
 import bpDialog from '@bpui/dialog';
+import * as febs from 'febs-browser';
+import * as os_enum from './os_enum.d';
 
 export * from './actionsheet.d';
-export * from './picker.d';
-export * from './picker-date.d';
-export * from './select.d';
 export * from './dialog.d';
+export * from './os_enum.d';
+export * from './picker-date.d';
+export * from './picker.d';
 export * from './popover.d';
+export * from './select.d';
 export * from './uploader.d';
 
 type LocaleMessage = string | LocaleMessageObject;
 interface LocaleMessageObject { [key: string]: LocaleMessage; }
-
-declare enum OSName {
-  mac = 'mac',
-  android = 'android',
-  iOS = 'iOS',
-  win = 'win',
-  other = 'other',
-}
 
 declare global {
   /**
@@ -65,7 +59,7 @@ declare global {
      */
     os: {
       /** @desc 操作系统名 */
-      name(): OSName,
+      name(): os_enum.OSName
     };
   };
   /**
