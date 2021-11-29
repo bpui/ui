@@ -118,6 +118,39 @@ function setup() {
     },
   });
 
+// declare enum OSName {
+//   mac = 'mac',
+//   android = 'android',
+//   iOS = 'iOS',
+//   win = 'win',
+//   other = 'other',
+// }
+  
+  Object.defineProperty(libs, 'os', {
+    get: function () {
+      return {
+        name: () => {
+          let UserAgent = navigator.userAgent.toLowerCase();
+          if (/mac os/.test(UserAgent)) {
+            return 'mac';
+          }
+          else if (/ipad/.test(UserAgent) || /iphone os/.test(UserAgent)) {
+            return 'iOS';
+          }
+          else if (/android/.test(UserAgent)) {
+            return 'android';
+          }
+          else if (/windows/.test(UserAgent)) {
+            return 'win';
+          }
+          else {
+            return 'other';
+          }
+        }
+      }
+    }
+  });
+
   window['$UILibs'] = libs;
   window['$UINetwork'] = network;
   window['$Febs'] = febs;

@@ -20,6 +20,14 @@ export * from './uploader.d';
 type LocaleMessage = string | LocaleMessageObject;
 interface LocaleMessageObject { [key: string]: LocaleMessage; }
 
+declare enum OSName {
+  mac = 'mac',
+  android = 'android',
+  iOS = 'iOS',
+  win = 'win',
+  other = 'other',
+}
+
 declare global {
   /**
    * 全局按键操作对象
@@ -52,6 +60,13 @@ declare global {
         [locale: string]: LocaleMessageObject
       },
     }) => void;
+    /**
+     * @desc 获取操作系统信息.
+     */
+    os: {
+      /** @desc 操作系统名 */
+      name(): OSName,
+    };
   };
   /**
    * @desc 获取本地语言. 如果 `key` 不存在则返回 `defaultWord`
