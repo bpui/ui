@@ -154,15 +154,21 @@ function setup() {
   window['$UILibs'] = libs;
   window['$UINetwork'] = network;
   window['$Febs'] = febs;
-  window['$i18n'] = function (k: string, defaultK: string) {
+  window['$i18n'] = function (k: string, defaultKOrParams: string | any, defaultK2?: string) {
+    let defaultWord = defaultKOrParams;
+    let hasParams = false;
+    if (typeof defaultKOrParams === 'object') {
+      defaultWord = defaultK2;
+      hasParams = true;
+    }
     let i18 = window['$__i18nMsg'];
     if (!i18) {
-      return defaultK || k;
+      return defaultWord || k;
     }
     else {
       if (!k) {
         console.warn('$i18n() key is null');
-        return defaultK || '';
+        return defaultWord || '';
       }
 
       let messages = i18;
@@ -170,12 +176,24 @@ function setup() {
       for (let i = 0; i < ks.length; i++) {
         let nn = ks[i];
         if (!messages.hasOwnProperty(nn)) {
-          return defaultK || k;
+          return defaultWord || k;
         }
         else {
           messages = messages[nn];
         }
       }
+
+      // 对参数处理.
+      if (hasParams) {
+        for (const key in defaultKOrParams) {
+          // let matchs = messages.match(new RegExp(`\\{${key}\\}`, 'g'));
+          messages = febs.string.replace(messages, `{${key}}`, `{!@#${key}!@#}`);
+        }
+        for (const key in defaultKOrParams) {
+          const element = defaultKOrParams[key];
+          messages = febs.string.replace(messages, `{!@#${key}!@#}`, element);
+        }
+      } // if
 
       return messages;
     }

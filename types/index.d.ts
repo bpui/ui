@@ -65,7 +65,7 @@ declare global {
   /**
    * @desc 获取本地语言. 如果 `key` 不存在则返回 `defaultWord`
    */
-  const $i18n: (key:string, defaultWord?:string) => string;
+  const $i18n: (key:string, defaultWordOrParams?:string|any, defaultWord?:string) => string;
   /**
    * @desc febs.
    */
