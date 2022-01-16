@@ -46,7 +46,7 @@ declare module 'vue/types/vue' {
     /**
      * @desc 获取本地语言. 如果 `key` 不存在则返回 `defaultWord`
      */
-    $i18n: (key:string, defaultWord?:string) => string;
+    $i18n: (key:string, defaultWordOrParams?:string|any, defaultWord?:string) => string;
     /**
      * @desc febs.
      */
