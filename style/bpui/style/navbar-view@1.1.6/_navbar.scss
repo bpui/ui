@@ -5,6 +5,8 @@
 * Desc: 
 */
 
+
+
 .bp-navbarView {
   /* 导航条 */
   .bp-navbarView_bar {
@@ -100,10 +102,10 @@
         outline: none;
       }
 
-      $bpNavbarIconWidth: (25/17)*$bpNavbarFontSize;
+      $bpNavbarIconWidth: calc(25 / 17) * $bpNavbarFontSize;
 
       span {
-        font-size: (17/17)*$bpNavbarFontSize;
+        font-size: calc(17 / 17) * $bpNavbarFontSize;
         font-weight: 400;
         line-height: $bpNavbarHeight;
         display: block;
@@ -114,7 +116,7 @@
       .bp-navbarView_icon, svg {
         width: $bpNavbarIconWidth;
         height: $bpNavbarIconWidth;
-        margin-top: ($bpNavbarHeight - $bpNavbarIconWidth) / 2;
+        margin-top: calc( $bpNavbarHeight - $bpNavbarIconWidth ) / 2;
         display: block;
         color: $bpNarbarTextColor;
       }
@@ -153,7 +155,7 @@
     }
     /* 中部 */
     .bp-navbarView_centerItem {
-      font-size: (20/17)*$bpNavbarFontSize;
+      font-size: calc( 20 / 17 ) * $bpNavbarFontSize;
       font-weight: 400;
       line-height: $bpNavbarHeight;
       text-align: center;

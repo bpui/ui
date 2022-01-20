@@ -1,11 +1,11 @@
 import * as febs from 'febs-browser'
-import store from 'store2'
+import store, { StoreAPI } from 'store2'
 import cookies from 'js-cookie'
 
 class Store {
-  s: store.StoreAPI
+  s: StoreAPI
 
-  constructor(s: store.StoreAPI) {
+  constructor(s: StoreAPI) {
     this.s = s
   }
 

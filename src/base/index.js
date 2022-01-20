@@ -15,6 +15,8 @@ function injectGlobal() {
    */
   bpLibs.icons.registerFontIcon('ui-alert', 'ui-iconAlert', 'ui-icon');
   bpLibs.icons.registerFontIcon('ui-warning', 'ui-iconWarning', 'ui-icon');
+  bpLibs.icons.registerFontIcon('ui-mute', 'ui-iconMute', 'ui-icon');
+  bpLibs.icons.registerFontIcon('ui-unmute', 'ui-iconUnmute', 'ui-icon');
 
   injectGlobal.installed = true;
 }

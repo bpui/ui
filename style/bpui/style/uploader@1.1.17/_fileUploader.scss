@@ -60,47 +60,47 @@
             &.bp-uploader__cover__file {
                 width: 44px;
                 height: 44px;
-                background-image: url('~@bpui/uploader/icons/svg/default.svg');
+                background-image: url('~@bpui/ui/style/bpui/style/uploader@1.1.17/icons/svg/default.svg');
                 background-size: 100% 100%;
 
                 &[data-type=_7z] {
-                    background-image: url('~@bpui/uploader/icons/svg/7z.svg');
+                    background-image: url('~@bpui/ui/style/bpui/style/uploader@1.1.17/icons/svg/7z.svg');
                 }
                 &[data-type=csv] {
-                    background-image: url('~@bpui/uploader/icons/svg/csv.svg');
+                    background-image: url('~@bpui/ui/style/bpui/style/uploader@1.1.17/icons/svg/csv.svg');
                 }
                 &[data-type=doc] {
-                    background-image: url('~@bpui/uploader/icons/svg/doc.svg');
+                    background-image: url('~@bpui/ui/style/bpui/style/uploader@1.1.17/icons/svg/doc.svg');
                 }
                 &[data-type=mov] {
-                    background-image: url('~@bpui/uploader/icons/svg/mov.svg');
+                    background-image: url('~@bpui/ui/style/bpui/style/uploader@1.1.17/icons/svg/mov.svg');
                 }
                 &[data-type=mp4] {
-                    background-image: url('~@bpui/uploader/icons/svg/mp4.svg');
+                    background-image: url('~@bpui/ui/style/bpui/style/uploader@1.1.17/icons/svg/mp4.svg');
                 }
                 &[data-type=pdf] {
-                    background-image: url('~@bpui/uploader/icons/svg/pdf.svg');
+                    background-image: url('~@bpui/ui/style/bpui/style/uploader@1.1.17/icons/svg/pdf.svg');
                 }
                 &[data-type=ppt] {
-                    background-image: url('~@bpui/uploader/icons/svg/ppt.svg');
+                    background-image: url('~@bpui/ui/style/bpui/style/uploader@1.1.17/icons/svg/ppt.svg');
                 }
                 &[data-type=psd] {
-                    background-image: url('~@bpui/uploader/icons/svg/psd.svg');
+                    background-image: url('~@bpui/ui/style/bpui/style/uploader@1.1.17/icons/svg/psd.svg');
                 }
                 &[data-type=rar] {
-                    background-image: url('~@bpui/uploader/icons/svg/rar.svg');
+                    background-image: url('~@bpui/ui/style/bpui/style/uploader@1.1.17/icons/svg/rar.svg');
                 }
                 &[data-type=svg] {
-                    background-image: url('~@bpui/uploader/icons/svg/svg.svg');
+                    background-image: url('~@bpui/ui/style/bpui/style/uploader@1.1.17/icons/svg/svg.svg');
                 }
                 &[data-type=txt] {
-                    background-image: url('~@bpui/uploader/icons/svg/txt.svg');
+                    background-image: url('~@bpui/ui/style/bpui/style/uploader@1.1.17/icons/svg/txt.svg');
                 }
                 &[data-type=xls] {
-                    background-image: url('~@bpui/uploader/icons/svg/xls.svg');
+                    background-image: url('~@bpui/ui/style/bpui/style/uploader@1.1.17/icons/svg/xls.svg');
                 }
                 &[data-type=zip] {
-                    background-image: url('~@bpui/uploader/icons/svg/zip.svg');
+                    background-image: url('~@bpui/ui/style/bpui/style/uploader@1.1.17/icons/svg/zip.svg');
                 }
             }
         }

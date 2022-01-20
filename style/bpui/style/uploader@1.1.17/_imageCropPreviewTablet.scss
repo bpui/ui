@@ -1,4 +1,5 @@
 
+
 .bp-uploader-image-crop-preview {
     font-family: $bpFont;
     z-index: 1000;
@@ -47,7 +48,7 @@
             width: $cliprect__horn_size;
             height: $cliprect__horn_size;
             overflow: hidden;
-            border-radius: $cliprect__horn_size / 2;
+            border-radius: calc( $cliprect__horn_size / 2 );
             background-color: $bpUploaderCropPreviewClipHornColor;
             opacity: 0.7;
             display: block;
@@ -56,63 +57,63 @@
 
             &[data-direction=n] {
                 cursor: n-resize;
-                top: - $cliprect__horn_size / 2;
+                top: - calc( $cliprect__horn_size / 2 );
                 left: 50%;
                 bottom: initial;
                 right: initial;
-                margin-left: - $cliprect__horn_size / 2;
+                margin-left: - calc( $cliprect__horn_size / 2 );
             }
             &[data-direction=s] {
                 cursor: s-resize;
                 top: initial;
                 left: 50%;
-                bottom: - $cliprect__horn_size / 2;
+                bottom: - calc( $cliprect__horn_size / 2 );
                 right: initial;
-                margin-left: - $cliprect__horn_size / 2;
+                margin-left: - calc( $cliprect__horn_size / 2 );
             }
             &[data-direction=w] {
                 cursor: w-resize;
                 top: 50%;
-                left: - $cliprect__horn_size / 2;
+                left: - calc($cliprect__horn_size / 2);
                 bottom: initial;
                 right: initial;
-                margin-top: - $cliprect__horn_size / 2;
+                margin-top: - calc($cliprect__horn_size / 2);
             }
             &[data-direction=e] {
                 cursor: e-resize;
                 top: 50%;
                 left: initial;
                 bottom: initial;
-                right: - $cliprect__horn_size / 2;
-                margin-top: - $cliprect__horn_size / 2;
+                right: - calc($cliprect__horn_size / 2);
+                margin-top: - calc($cliprect__horn_size / 2);
             }
             &[data-direction=ne] {
                 cursor: ne-resize;
-                top: - $cliprect__horn_size / 2;
+                top: - calc($cliprect__horn_size / 2);
                 left: initial;
                 bottom: initial;
-                right: - $cliprect__horn_size / 2;
+                right: - calc($cliprect__horn_size / 2);
             }
             &[data-direction=nw] {
                 cursor: nw-resize;
-                top: - $cliprect__horn_size / 2;
-                left: - $cliprect__horn_size / 2;
+                top: - calc($cliprect__horn_size / 2);
+                left: - calc($cliprect__horn_size / 2);
                 bottom: initial;
                 right: initial;
             }
             &[data-direction=sw] {
                 cursor: sw-resize;
                 top: initial;
-                left: - $cliprect__horn_size / 2;
-                bottom: - $cliprect__horn_size / 2;
+                left: - calc($cliprect__horn_size / 2);
+                bottom: - calc($cliprect__horn_size / 2);
                 right: initial;
             }
             &[data-direction=se] {
                 cursor: se-resize;
                 top: initial;
                 left: initial;
-                bottom: - $cliprect__horn_size / 2;
-                right: - $cliprect__horn_size / 2;
+                bottom: - calc($cliprect__horn_size / 2);
+                right: - calc($cliprect__horn_size / 2);
             }
         }
     }

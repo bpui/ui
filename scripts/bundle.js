@@ -234,14 +234,35 @@ function build(pkg) {
 
   let p = []
 
-  let buildScss
-  let buildCss
-  if (buildScss) {
-    p.push(buildScss().then((bundle) => bundleUmd(bundle, false, true)))
-  }
-  if (buildCss) {
-    p.push(buildCss().then((bundle) => bundleUmd(bundle, false, true)))
-  }
+  // let buildScss;
+  // if (febs.file.fileIsExist(path.join(__dirname, '..', `style/_index.scss`))) {
+  //   buildScss = ()=>rollup.rollup({
+  //       input: path.join(__dirname, '..', `style/_index.scss`),
+  //       plugins: plugins.concat(
+  //         rollupSassBundle(),
+  //       ),
+  //       external
+  //     })
+  // }
+  // let buildCss;
+  // if (febs.file.fileIsExist(path.join(__dirname, '..', `style/_index.scss`))) {
+  //   buildCss = ()=>rollup.rollup({
+  //       input: path.join(__dirname, '..', `style/_index.scss`),
+  //       plugins: plugins.concat(
+  //         rollupSass({
+  //           output: true
+  //         }),
+  //       ),
+  //       external
+  //     })
+  // }
+
+  // if (buildScss) {
+  //   p.push(buildScss().then((bundle) => bundleUmd(bundle, false, true)))
+  // }
+  // if (buildCss) {
+  //   p.push(buildCss().then((bundle) => bundleUmd(bundle, false, true)))
+  // }
 
   if (febs.file.fileIsExist(inputMain)) {
     // umd minify
@@ -277,7 +298,33 @@ function getInputMain(pkg) {
 }
 
 build(cwd)
-  .then((res) => {})
+  .then((res) => {
+    // return febs.utils.sleep(1000);
+  })
+  // .then((res) => {
+  //   febs.file.dirAssure(path.join(
+  //     __dirname, '..', 'dist', 'fonts'
+  //   ));
+  //   return febs.file.dirCopyAsync(path.join(
+  //     __dirname, '..', 'style', 'fonts'
+  //   ), path.join(
+  //     __dirname, '..', 'dist', 'fonts'
+  //   ));
+  // })
+  // .then((res) => {
+  //   return febs.file.fileRemoveAsync(path.join(
+  //     __dirname,
+  //     '..', 'dist',
+  //     `style.js`
+  //   ));
+  // })
+  // .then((res) => {
+  //   return febs.file.fileRemoveAsync(path.join(
+  //       __dirname,
+  //       '..', 'dist',
+  //       `style.js.map`
+  //     ));
+  // })
   .catch((e) => {
     console.error(e)
   })

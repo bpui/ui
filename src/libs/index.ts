@@ -31,7 +31,12 @@ export function registerApp(routes: {
   libs.registerApp(routes.routePath, routes.basePath);
 }
 
-export function getLayout(layouts:any, newRoute:any, oldRoute:any) {
+export function getLayout(layouts: any, newRoute: any, oldRoute: any) {
+  if (!newRoute) {
+    // 默认值.
+    return (layouts /*as any*/)['default'];
+  }
+
   let newRoutePath = newRoute.path;
   if (newRoutePath[0] == '/') newRoutePath = newRoutePath.substring(1);
   for (let p in layouts) {
@@ -43,6 +48,18 @@ export function getLayout(layouts:any, newRoute:any, oldRoute:any) {
 
   // 默认值.
   return (layouts /*as any*/)['default'];
+}
+
+export function getTheme():string {
+  // theme.
+  let theme = storage.namespace('theme').get('theme') || 'light';
+  return theme;
+}
+
+export function setTheme(themeName:string):void {
+  themeName = themeName || 'light';
+  $('html').attr('data-theme', themeName);
+  storage.namespace('theme').set('theme', themeName);
 }
 
 

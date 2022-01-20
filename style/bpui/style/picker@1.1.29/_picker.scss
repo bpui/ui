@@ -5,6 +5,8 @@
 * Desc: 
 */
 
+
+
 /* don't change */
 $bpPickerIndicatorHeight: 40px;
 
@@ -247,7 +249,7 @@ $bpPickerIndicatorHeight: 40px;
               box-sizing: border-box;
               position: absolute;
               right: 30px;
-              top: ($bpPickerIndicatorHeight - 22px) / 2;
+              top: calc( $bpPickerIndicatorHeight - 22px ) / 2;
               border-radius: 4px;
               border: 1px solid getThemeValue(bpPickerCheckBorderColor);
             }
@@ -262,7 +264,7 @@ $bpPickerIndicatorHeight: 40px;
               padding: 2px;
               position: absolute;
               right: 30px;
-              top: ($bpPickerIndicatorHeight - 22px) / 2;
+              top: calc( $bpPickerIndicatorHeight - 22px ) / 2;
 
               &::before {
                 color: getThemeValue(bpPickerCheckColor);

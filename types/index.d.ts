@@ -18,7 +18,7 @@ export * from './picker.d';
 export * from './popover.d';
 export * from './select.d';
 export * from './uploader.d';
-
+  
 type LocaleMessage = string | LocaleMessageObject;
 interface LocaleMessageObject { [key: string]: LocaleMessage; }
 
@@ -137,6 +137,17 @@ export function registerApp(routes: {
  * @param oldRoute
  */
 export function getLayout(layouts: any, newRoute: bp.Location, oldRoute: bp.Location): any;
+
+/**
+ * 获得当前主题.
+ */
+export function getTheme(): string;
+
+/**
+ * 设置当前主题
+ * @param themeName 默认为 light
+ */
+export function setTheme(themeName?:string):void
 
 export interface Hook {
   /**

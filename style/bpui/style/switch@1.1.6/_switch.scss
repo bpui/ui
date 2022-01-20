@@ -1,4 +1,5 @@
 
+
 @include ui-themeify($uiSwitchThemes) {
     .bp-switch {
         font-family: $bpFont;
@@ -46,10 +47,10 @@
                 margin: 0;
                 display: inline-block;
                 position: relative;
-                width: $bpSwitchSize / 32 * 50;
+                width: calc( $bpSwitchSize / 32 ) * 50;
                 height: $bpSwitchSize;
                 outline: none;
-                border-radius: $bpSwitchSize / 2;
+                border-radius: calc( $bpSwitchSize / 2 );
                 box-sizing: border-box;
                 background: getThemeValue(bpSwitchBgOffColor);
                 cursor: pointer;
