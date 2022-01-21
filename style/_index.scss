@@ -1,19 +1,18 @@
-@import '~@bpui/ui/style/fonts/noto-sans-sc/latin.css';
-@import '~@bpui/ui/style/fonts/noto-sans-sc/chinese-simplified.css';
-@import './bpui/style';
+@import "~@bpui/ui/style/fonts/noto-sans-sc/latin.css";
+@import "~@bpui/ui/style/fonts/noto-sans-sc/chinese-simplified.css";
+@import "./bpui/style";
 
-@import '../icons/index';
+@import "../icons/index";
 
-@import './base/border';
-@import './base/device';
-@import './base/text';
+@import "./base/border";
+@import "./base/device";
+@import "./base/text";
 
-@import './base/toast';
+@import "./base/toast";
 
-@import './common/flex';
-@import './common/font';
-@import './common/margin';
-@import './common/padding';
+@import "./common/flex";
+@import "./common/font";
+@import "./common/margin";
+@import "./common/padding";
 
-@import './base/uitable';
-
+@import "./base/uitable";

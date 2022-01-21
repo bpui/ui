@@ -17,6 +17,7 @@ export * from './libs';
 export * from './form';
 export * from './dialog';
 export * from './layout';
+export * from './other';
 
 // bpui plugin.
 import "bpui.js";

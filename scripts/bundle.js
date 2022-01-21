@@ -264,6 +264,7 @@ function build(pkg) {
   //   p.push(buildCss().then((bundle) => bundleUmd(bundle, false, true)))
   // }
 
+
   if (febs.file.fileIsExist(inputMain)) {
     // umd minify
     p.push(
