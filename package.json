@@ -70,13 +70,15 @@
   "main": "dist/index.min.js",
   "module": "dist/index.esm.min.js",
   "types": "types/index.d.ts",
-  "maintainers": [{
-    "name": "brainpoint",
-    "email": "bpoint.lee@gmail.com"
-  }],
+  "maintainers": [
+    {
+      "name": "brainpoint",
+      "email": "bpoint.lee@gmail.com"
+    }
+  ],
   "scripts": {
     "prepublishOnly": "node ./scripts/bundle.js"
   },
   "name": "@bpui/ui",
-  "version": "0.0.79"
+  "version": "0.0.80"
 }

@@ -1,27 +1,28 @@
 'use strict';
 
 /**
-* Copyright (c) 2021 bpui All Rights Reserved.
-* Author: brian.li
-* Date: 2021-09-08 17:44
-* Desc: 
-*/
+ * Copyright (c) 2021 bpui All Rights Reserved.
+ * Author: brian.li
+ * Date: 2021-09-08 17:44
+ * Desc:
+ */
 
 import * as febs from 'febs-browser';
 import urlUtils from '../_utils/urlUtils';
 import qs from '../_utils/qs/dist';
 
-const DefaultDelayTime = 500 // londing出现的延迟时间
+const DefaultDelayTime = 500; // londing出现的延迟时间
 const DefaultTimeout = 20000;
 
-function networkHandlerProvider(): void {
-}
+function networkHandlerProvider(): void {}
 
-function getNetworkHandler(): /*bp.network.INetworkHandler*/any {
+function getNetworkHandler(): /*bp.network.INetworkHandler*/ any {
   return (networkHandlerProvider as any).handler;
 }
 
-export function setNetworkHandler(handler: /*bp.network.INetworkHandler*/any): void {
+export function setNetworkHandler(
+  handler: /*bp.network.INetworkHandler*/ any
+): void {
   (networkHandlerProvider as any).handler = handler;
 }
 
@@ -37,7 +38,7 @@ function _getEncodeURIComponent(url: string, params: any): string {
   if (str) {
     return str;
   }
-  
+
   url = encodeURI(url);
   if (params && Object.keys(params).length > 0) {
     if (url.indexOf('?') < 0) {
@@ -45,14 +46,17 @@ function _getEncodeURIComponent(url: string, params: any): string {
     }
     url += qs.stringify(params);
   }
-  return url
+  return url;
 }
 
 /**
  * @desc: 网络请求.
  * @return: Promise
  */
-function _net(url: string, option: /*bp.network.FetchOption*/any): Promise<any> {
+function _net(
+  url: string,
+  option: /*bp.network.FetchOption*/ any
+): Promise<any> {
   let handler = getNetworkHandler();
 
   if (!option.noLoading) {
@@ -62,15 +66,23 @@ function _net(url: string, option: /*bp.network.FetchOption*/any): Promise<any> 
   let uriLower = url.toLowerCase();
   if (uriLower.indexOf('https://') == 0 || uriLower.indexOf('http://') == 0) {
     uriLower = url;
-  }
-  else {
+  } else {
     uriLower = urlUtils.join(handler.requestHost, url);
+    if (uriLower.indexOf('http') != 0) {
+      uriLower =
+        window.location.protocol +
+        ':/' +
+        urlUtils.join(window.location.host, uriLower);
+    }
   }
 
   let defaultQueryParam = handler.defaultQueryParam;
   if (defaultQueryParam && Object.keys(defaultQueryParam).length > 0) {
     if (uriLower.indexOf('?') > 0) {
-      if (uriLower[uriLower.length - 1] != '?' && uriLower[uriLower.length - 1] != '&') {
+      if (
+        uriLower[uriLower.length - 1] != '?' &&
+        uriLower[uriLower.length - 1] != '&'
+      ) {
         uriLower += '&';
       }
     } else {
@@ -89,7 +101,10 @@ function _net(url: string, option: /*bp.network.FetchOption*/any): Promise<any> 
     defaultOption.timeout = DefaultTimeout;
   }
 
-  defaultOption.headers = febs.utils.mergeMap(defaultOption.headers, option.headers);
+  defaultOption.headers = febs.utils.mergeMap(
+    defaultOption.headers,
+    option.headers
+  );
   if (option.hasOwnProperty('timeout')) {
     defaultOption.timeout = option.timeout;
   }
@@ -109,42 +124,42 @@ function _net(url: string, option: /*bp.network.FetchOption*/any): Promise<any> 
     defaultOption.body = option.body;
   }
   //defaultOption = febs.utils.mergeMap(defaultOption, option);
-  
+
   if (defaultOption.body) {
     let isString = typeof defaultOption.body === 'string';
     // if (typeof defaultOption.body !== 'string') {
     if (defaultOption.contentType == 'formData') {
-      defaultOption.body = isString ? defaultOption.body : qs.stringify(defaultOption.body);
+      defaultOption.body = isString
+        ? defaultOption.body
+        : qs.stringify(defaultOption.body);
       defaultOption.headers = defaultOption.headers || {};
-      defaultOption.headers['Content-Type'] = 'application/x-www-form-urlencoded';
-    }
-    else if (defaultOption.contentType == 'textPlain') {
+      defaultOption.headers['Content-Type'] =
+        'application/x-www-form-urlencoded';
+    } else if (defaultOption.contentType == 'textPlain') {
       if (!isString) {
-        throw new Error("text/plain body must be string");
+        throw new Error('text/plain body must be string');
       }
       defaultOption.body = defaultOption.body;
       defaultOption.headers = defaultOption.headers || {};
-      defaultOption.headers["Content-Type"] = "text/plain";
-    }
-    else {
-      defaultOption.body = isString ? defaultOption.body : JSON.stringify(defaultOption.body);
+      defaultOption.headers['Content-Type'] = 'text/plain';
+    } else {
+      defaultOption.body = isString
+        ? defaultOption.body
+        : JSON.stringify(defaultOption.body);
       defaultOption.headers = defaultOption.headers || {};
       defaultOption.headers['Content-Type'] = 'application/json';
     }
   }
 
   return febs.net
-    .fetch(
-      uriLower,
-      defaultOption
-    )
+    .fetch(uriLower, defaultOption)
     .then((res: any) => {
       handler.onRawHandler(res, url);
 
       if (option.rawHandle) {
-        option.rawHandle(res, url)
+        option.rawHandle(res, url);
       }
-      return res
+      return res;
     })
     .then((res: Response) => {
       let contentType = res.headers.get('Content-Type');
@@ -153,39 +168,40 @@ function _net(url: string, option: /*bp.network.FetchOption*/any): Promise<any> 
       }
       if (contentType.indexOf('application/octet-stream') >= 0) {
         return res.blob();
-      }
-      else {
+      } else {
         return res.text();
       }
     })
     .then((res: any) => {
       if (option.errorHandle) {
         return option.errorHandle(res, url);
-      }
-      else {
+      } else {
         return handler.onErrorHandler(res, url);
       }
     })
     .catch((err: any) => {
-      console.log('network is error')
-      throw err
+      console.log('network is error');
+      throw err;
     })
     .finally(() => {
       if (!option.noLoading) {
-        handler.onHideLoading(option.loadingDom)
+        handler.onHideLoading(option.loadingDom);
       }
     });
 }
-
 
 /**
  * @desc: get请求.
  * @param body: 请求参数. get方式作为 querystring 传递.
  * @return: Promise
  */
-function get(url: string, body: any, option?: /*bp.network.FetchOption*/any): Promise<any> {
+function get(
+  url: string,
+  body: any,
+  option?: /*bp.network.FetchOption*/ any
+): Promise<any> {
   let uri = _getEncodeURIComponent(url, body);
-  return _net(uri, febs.utils.mergeMap(option, {method:'get'}));
+  return _net(uri, febs.utils.mergeMap(option, { method: 'get' }));
 }
 
 /**
@@ -193,12 +209,19 @@ function get(url: string, body: any, option?: /*bp.network.FetchOption*/any): Pr
  * @param body: 请求参数.
  * @return: Promise
  */
-function post(url: string, body: any, option?: /*bp.network.FetchOption*/any): Promise<any> {
+function post(
+  url: string,
+  body: any,
+  option?: /*bp.network.FetchOption*/ any
+): Promise<any> {
   let uri = _getEncodeURIComponent(url, null);
-  return _net(uri, febs.utils.mergeMap(option, {
-    method: 'post',
-    body: body,
-  }));
+  return _net(
+    uri,
+    febs.utils.mergeMap(option, {
+      method: 'post',
+      body: body,
+    })
+  );
 }
 
 /**
@@ -206,12 +229,19 @@ function post(url: string, body: any, option?: /*bp.network.FetchOption*/any): P
  * @param body: 请求参数.
  * @return: Promise
  */
-function put(url: string, body: any, option?: /*bp.network.FetchOption*/any): Promise<any> {
+function put(
+  url: string,
+  body: any,
+  option?: /*bp.network.FetchOption*/ any
+): Promise<any> {
   let uri = _getEncodeURIComponent(url, null);
-  return _net(uri, febs.utils.mergeMap(option, {
-    method: 'put',
-    body: body,
-  }));
+  return _net(
+    uri,
+    febs.utils.mergeMap(option, {
+      method: 'put',
+      body: body,
+    })
+  );
 }
 
 /**
@@ -219,11 +249,18 @@ function put(url: string, body: any, option?: /*bp.network.FetchOption*/any): Pr
  * @param body: 请求参数.
  * @return: Promise
  */
-function deleteFoo(url: string, body: any, option?: /*bp.network.FetchOption*/any): Promise<any> {
+function deleteFoo(
+  url: string,
+  body: any,
+  option?: /*bp.network.FetchOption*/ any
+): Promise<any> {
   let uri = _getEncodeURIComponent(url, body);
-  return _net(uri, febs.utils.mergeMap(option, {
-    method: 'delete',
-  }));
+  return _net(
+    uri,
+    febs.utils.mergeMap(option, {
+      method: 'delete',
+    })
+  );
 }
 
 export const network = {
@@ -231,4 +268,4 @@ export const network = {
   post,
   put,
   delete: deleteFoo,
-}
+};
