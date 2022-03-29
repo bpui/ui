@@ -71,7 +71,7 @@ function _net(
     if (uriLower.indexOf('http') != 0) {
       uriLower =
         window.location.protocol +
-        ':/' +
+        '//' +
         urlUtils.join(window.location.host, uriLower);
     }
   }
